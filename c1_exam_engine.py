@@ -17,8 +17,28 @@ import time
 import random
 from datetime import datetime
 
+# Đảm bảo mã hóa UTF-8 tránh lỗi charmap cp1252 trên Windows/Console
+if sys.stdout and hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+if sys.stderr and hasattr(sys.stderr, 'reconfigure'):
+    try:
+        sys.stderr.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-QUESTIONS_FILE = os.path.join(BASE_DIR, 'driving-theory-app', 'js', 'questions.json')
+QUESTIONS_FILE = os.path.join(BASE_DIR, 'questions.json')
+if not os.path.exists(QUESTIONS_FILE):
+    QUESTIONS_FILE = os.path.join(BASE_DIR, 'driving-theory-app', 'js', 'questions.json')
+if not os.path.exists(QUESTIONS_FILE):
+    parent_dir = os.path.dirname(BASE_DIR)
+    alt = os.path.join(parent_dir, 'driving-theory-app', 'js', 'questions.json')
+    if os.path.exists(alt):
+        QUESTIONS_FILE = alt
+
 MISTAKES_FILE = os.path.join(BASE_DIR, 'user_mistakes.json')
 
 # Tải 600 câu hỏi
@@ -27,8 +47,9 @@ if os.path.exists(QUESTIONS_FILE):
     try:
         with open(QUESTIONS_FILE, 'r', encoding='utf-8') as f:
             ALL_QUESTIONS = json.load(f)
+        print(f"[Exam Engine] Loaded {len(ALL_QUESTIONS)} questions from {QUESTIONS_FILE}")
     except Exception as e:
-        print(f"[Exam Engine] Lỗi nạp questions.json: {e}")
+        print(f"[Exam Engine] Error loading questions.json: {e}")
 
 # Quản lý phiên thi của từng chat_id
 ACTIVE_EXAMS = {}
@@ -432,6 +453,14 @@ PRACTICE_SESSIONS = {}
 
 def get_section_questions(part_key):
     """Lấy danh sách câu hỏi chuẩn xác tuyệt đối cho từng phần (sorted theo ID)"""
+    global ALL_QUESTIONS
+    if not ALL_QUESTIONS and os.path.exists(QUESTIONS_FILE):
+        try:
+            with open(QUESTIONS_FILE, 'r', encoding='utf-8') as f:
+                ALL_QUESTIONS = json.load(f)
+        except Exception as e:
+            print(f"[Exam Engine] Error reloading questions.json: {e}")
+
     cfg = SECTIONS_CONFIG.get(part_key.upper())
     if not cfg:
         for k, v in SECTIONS_CONFIG.items():

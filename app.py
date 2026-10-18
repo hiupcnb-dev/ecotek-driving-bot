@@ -110,6 +110,14 @@ if os.path.exists(QUESTIONS_FILE):
     except Exception as e:
         print(f"[Bot] Lỗi đọc questions.json: {e}")
 
+try:
+    import c1_exam_engine
+    if ALL_QUESTIONS and (not hasattr(c1_exam_engine, 'ALL_QUESTIONS') or not c1_exam_engine.ALL_QUESTIONS):
+        c1_exam_engine.ALL_QUESTIONS = ALL_QUESTIONS
+        print(f"[Bot] Synced {len(ALL_QUESTIONS)} questions to c1_exam_engine.")
+except Exception as e:
+    print(f"[Bot] Error syncing questions to c1_exam_engine: {e}")
+
 status_lock = threading.Lock()
 
 def load_status():
