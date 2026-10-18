@@ -1059,13 +1059,14 @@ def send_mistake_quiz(chat_id):
 # ================= KHO MẸO THI 100% ĐẬU =================
 def send_tips_menu(chat_id, message_id=None):
     """Giao diện danh mục mẹo thi 11 nhóm (Kèm Mẹo Thực Chiến Từ Ghi Âm Bài Giảng)"""
-    msg = """💡 <b>KHO 14 BỘ MẸO THI LÝ THUYẾT LÁI XE SÁT HẠCH 600 CÂU (100% ĐẬU)</b>
+    msg = """💡 <b>KHO 15 BỘ MẸO THI LÝ THUYẾT LÁI XE SÁT HẠCH 600 CÂU (100% ĐẬU)</b>
 ━━━━━━━━━━━━━━━━━━━
-Chắt lọc từ 600 câu hỏi Cục Đường bộ, <b>Bài giảng ghi âm trực tiếp lớp học</b> & Bộ bí kíp giải nhanh 3 giây!
+Chắt lọc từ 600 câu hỏi Cục Đường bộ, <b>Bí kíp TikTok triệu view</b>, Bài giảng lớp học & Khẩu quyết 3 giây!
 Nắm chắc các mẹo này sẽ giúp anh làm đề thi 40 câu chỉ mất 5 - 7 phút mà đạt điểm tuyệt đối!
 
 👇 <i>Anh chọn chủ đề mẹo bên dưới để xem chi tiết:</i>"""
     kb = [
+        [{"text": "🔥 15. Bí Kíp Mẹo TikTok Triệu View", "callback_data": "tip_cat_tiktok_viral"}],
         [{"text": "⚠️ 12. Mẹo 60 Câu Điểm Liệt (Cực Quan Trọng)", "callback_data": "tip_cat_critical_60"}],
         [{"text": "🎙️ 11. Mẹo Ghi Âm Lớp Học (Thầy Dặn)", "callback_data": "tip_cat_lecture"}],
         [{"text": "🎯 13. Mẹo Bẫy 'Cả Ý 1 & 2'", "callback_data": "tip_cat_trick_traps"},

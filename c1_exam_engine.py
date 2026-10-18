@@ -341,6 +341,19 @@ EXAM_TIPS_CATEGORIES = {
             ("Mẹo Biển Giao nhau với đường ưu tiên (W.208)", "Xe nào đứng trước mặt biển tam giác viền đỏ MŨI CHÚC XUỐNG DƯỚI -> XE ĐÓ ĐANG Ở ĐƯỜNG PHỤ, BẮT BUỘC PHẢI DỪNG LẠI NHƯỜNG ĐƯỜNG CHO TẤT CẢ CÁC XE KHÁC!"),
             ("Mẹo Ngã tư đồng cấp (Bên phải không vướng)", "Ngã tư không có đèn, không có biển: Xét xe nào mà bên tay phải hoàn toàn trống (không có xe nào) -> Xe đó đi trước. Sau khi xe đó đi, bên phải của xe tiếp theo được giải phóng, cứ thế đi theo chiều kim đồng hồ.")
         ]
+    },
+    'tiktok_viral': {
+        'title': '🔥 15. Bí Kíp Mẹo TikTok Triệu View (Khẩu Quyết Nhìn Phát Chọn Luôn)',
+        'items': [
+            ("Mẹo Tốc Độ: '10 Đôi - 9 Chiều'", "• ĐƯỜNG ĐÔI: Lấy 10 trừ đi số đầu tốc độ -> Ra đáp án!\n  + 90 km/h: 10 - 9 = 1 -> Chọn Ý 1.\n  + 80 km/h: 10 - 8 = 2 -> Chọn Ý 2.\n  + 70 km/h: 10 - 7 = 3 -> Chọn Ý 3.\n• ĐƯỜNG 2 CHIỀU: Lấy 9 trừ đi số đầu tốc độ -> Ra đáp án!\n  + 80 km/h: 9 - 8 = 1 -> Chọn Ý 1.\n  + 70 km/h: 9 - 7 = 2 -> Chọn Ý 2.\n  + 60 km/h: 9 - 6 = 3 -> Chọn Ý 3.\n  + 50 km/h: 9 - 5 = 4 -> Chọn Ý 4."),
+            ("Mẹo CSGT giơ tay", "• CSGT giơ 1 TAY LÊN TRỜI -> Chọn ngay Ý 3 (hoặc nhớ: giơ 1 tay chọn 3, dang 2 tay chọn 1).\n• Khi CSGT giơ tay: Tất cả xe trước/sau/trái/phải phải tuân thủ nghiêm ngặt."),
+            ("Mẹo Khái Niệm: '1 Dài, 2 Ngắn'", "• Câu hỏi có: 'Phương tiện thô sơ', 'Người lái xe', 'Khổ giới hạn' -> Chọn ngay Ý 1.\n• Câu hỏi có: 'Làn đường', 'Phương tiện cơ giới', 'Dừng xe', 'Đỗ xe', 'Người điều khiển giao thông' -> Chọn ngay Ý 2."),
+            ("Mẹo Sa Hình: Đua xe / Đếm bánh xe", "Gặp câu hỏi các xe đang chạy cùng chiều (đua xe): Nhìn xe đi cuối cùng trong hàng, lấy số bánh trừ đi 1 = Đáp án!\n• Xe ô tô con cuối cùng (4 bánh): 4 - 1 = 3 -> Chọn Ý 3.\n• Xe mô tô cuối cùng (2 bánh): 2 - 1 = 1 -> Chọn Ý 1."),
+            ("Mẹo Sa Hình: Xe Chữa Cháy & Quân Sự", "Thấy xe Chữa Cháy hoặc Quân Sự xuất hiện trong sa hình -> Cứ tự tin chọn ngay Ý 2 (100% trúng)!"),
+            ("Mẹo Sa Hình: Xe Kéo Xe / Kéo Rơ-moóc", "Thấy hình xe tải kéo rơ-moóc hoặc xe con kéo xe khác -> Nhìn đáp án chọn ngay câu có chữ 'Không đúng' hoặc 'Vi phạm quy tắc giao thông'!"),
+            ("Mẹo Biển Tròn Xanh Hiệu Lệnh", "Câu hỏi có 2 hoặc 3 biển tròn màu xanh:\n• Đề bài ngắn (chỉ 1 dòng chữ): Chọn Ý 1.\n• Đề bài dài (từ 2 dòng chữ trở lên): Chọn Ý 3."),
+            ("Mẹo Nghiệp Vụ Vận Tải: 'Thuê 1 - Kinh 2'", "• Câu hỏi bắt đầu bằng: 'Người thuê vận tải...', 'Hành khách...' -> Chọn Ý 1.\n• Câu hỏi bắt đầu bằng: 'Người kinh doanh vận tải...' -> Chọn Ý 2.")
+        ]
     }
 }
 
