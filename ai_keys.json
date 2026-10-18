@@ -1,0 +1,18 @@
+{
+  "gemini_keys": [],
+  "openrouter_keys": [
+    "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",
+    "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"
+  ],
+  "active_gemini_index": 0,
+  "active_openrouter_index": 0,
+  "preferred_models": [
+    "dots-studio/dots-3-note-preview:free",
+    "liquid/lfm-2.5-2.6b:free",
+    "google/gemma-4-31b-it:free",
+    "google/gemma-4-26b-a4b-it:free",
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-3-super-120b-a12b:free"
+  ],
+  "gemini_model": "gemini-2.5-flash"
+}

@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: ecotek-driving-bot
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    autoDeploy: true
+    envVars:
+      - key: BOT_TOKEN
+        value: "8979890184:AAEKDE2_OIoM20oGORMEAaFM2sK6nzGsyEE"
+      - key: FALLBACK_BOT_TOKEN
+        value: "8905133975:AAHjwARgwjIOMeoO522zT3NjmnHKhgtcy2M"
+      - key: CHAT_ID
+        value: "8322961603"
+      - key: STUDENT_NAME
+        value: "Nguyễn Trung Hiếu"
+      - key: COURSE_NAME
+        value: "K01Đ09 (Hạng C1)"
+      - key: OPENAI_API_KEY
+        value: "sk-n7hCiWdN4Tok6tDSBg7WEvqbZmqhBMqbjH54oSSaSiS4ade"
+      - key: OPENROUTER_API_KEY
+        value: "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"
+      - key: RENDER_EXTERNAL_URL
+        sync: false
