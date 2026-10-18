@@ -18,9 +18,7 @@ import random
 from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-QUESTIONS_FILE = os.path.join(BASE_DIR, 'questions.json')
-if not os.path.exists(QUESTIONS_FILE):
-    QUESTIONS_FILE = os.path.join(BASE_DIR, 'driving-theory-app', 'js', 'questions.json')
+QUESTIONS_FILE = os.path.join(BASE_DIR, 'driving-theory-app', 'js', 'questions.json')
 MISTAKES_FILE = os.path.join(BASE_DIR, 'user_mistakes.json')
 
 # Tải 600 câu hỏi
@@ -312,6 +310,36 @@ EXAM_TIPS_CATEGORIES = {
             ("Đèn cảnh báo bảng táp-lô ô tô", "• Bật khóa điện ON: Các đèn sáng 2-3s tự kiểm tra. Khi nổ máy chạy: Đèn nào VẪN SÁNG ĐỎ/VÀNG là hệ thống đó ĐANG BỊ HỎNG/LỖI!\n• Đèn (!) hoặc (P): Phanh tay đang hãm hoặc thiếu dầu phanh.\n• Đèn bình dầu/ấm trà: Áp suất dầu bôi trơn thấp -> DỪNG XE NGAY LẬP TỨC để tránh bó vỡ lốc máy!"),
             ("Động cơ Diesel & Hệ thống bôi trơn", "• Động cơ Diesel KHÔNG DÙNG BUGI ĐÁNH LỬA (nhiên liệu tự cháy do nén khí cực cao).\n• Hệ thống bôi trơn: Cung cấp dầu bôi trơn sạch để giảm ma sát, làm mát, làm kín, làm sạch và chống rỉ sét."),
             ("Đỗ xe đường phố: 0.25m & 20m", "• Đỗ sát lề hè: Không cách quá 0.25 MÉT (25 cm).\n• Đỗ xe trên phố hẹp đối diện: Cách nhau tối thiểu 20 MÉT.\n• Thời gian lái xe: Liên tục không quá 4 GIỜ; tổng ngày không quá 10 GIỜ.")
+        ]
+    },
+    'critical_60': {
+        'title': '⚠️ 12. Mẹo 60 Câu Điểm Liệt (Chắc Chắn Đậu 100% - Không Bao Giờ Trượt Oan)',
+        'items': [
+            ("Tầm quan trọng của Câu Điểm Liệt", "Trong 40 câu sát hạch C1, chỉ cần SAI ĐÚNG 1 CÂU ĐIỂM LIỆT là TRƯỢT NGAY LẬP TỨC (Dù 39 câu còn lại đúng 100%)!\n• 100% câu điểm liệt là các tình huống gây tai nạn thảm khốc."),
+            ("Mẹo 1: 'Bị nghiêm cấm' (25 câu)", "Cứ thấy cụm từ 'Bị nghiêm cấm' trong đáp án -> CHỌN NGAY:\n• Uống rượu bia, ma túy khi lái xe.\n• Đua xe, cổ vũ đua xe, lạng lách đánh võng.\n• Bấm còi hơi trong đô thị (22h - 5h sáng).\n• Phá hoại dải phân cách, cọc tiêu, gương cầu lồi."),
+            ("Mẹo 2: 'Không được phép' (30 câu)", "Cứ thấy cụm từ 'Không được phép / Không được...' ở đầu đáp án -> CHỌN NGAY:\n• Không được lùi xe, quay đầu trên đường cao tốc.\n• Không được quay đầu trên cầu, gầm cầu vượt, trong hầm, nơi đường cong khuất tầm nhìn.\n• Không được vượt xe tại nơi đường sắt giao nhau hoặc tầm nhìn bị che khuất."),
+            ("Mẹo 3: Khoảng cách đường ray 5 mét", "Tại nơi đường sắt giao nhau không có rào chắn, khi có chuông reo hoặc đèn đỏ nhấp nháy: BẮT BUỘC DỪNG CÁCH RAY NGOÀI CÙNG TỐI THIỂU 5 MÉT."),
+            ("Mẹo 4: Xử lý xe mất phanh khi xuống dốc", "Luôn chọn đáp án: Về số thấp (số 1), dùng lực hãm động cơ, kéo phanh tay từ từ, tìm chướng ngại vật/hộc cứu nạn bên đường để dừng xe. TUYỆT ĐỐI CẤM về số mo (N) hoặc tắt máy!"),
+            ("Mẹo 5: Hành vi khi gây tai nạn", "Phải dừng xe ngay tại hiện trường, giữ nguyên hiện trường, cấp cứu người bị thương và trình báo cơ quan công an. TUYỆT ĐỐI CẤM bỏ trốn để trốn tránh trách nhiệm.")
+        ]
+    },
+    'trick_traps': {
+        'title': '🎯 13. Mẹo Bắt Bài Câu Hỏi Gài Bẫy (Quy Tắc \'Cả Ý 1 & 2\', Ngoại Lệ)',
+        'items': [
+            ("Bẫy 'Cả ý 1 và ý 2' (Chỉ đúng trong 4 câu)", "Trong 600 câu mới, Bộ GTVT đã bỏ hầu hết đáp án 'Cả ý 1 và 2'. CHỈ CÒN ĐÚNG 4 CÂU ĐƯỢC CHỌN 'CẢ Ý 1 VÀ 2':\n1. Đạo đức kinh doanh vận tải.\n2. Hành vi bồi dưỡng kỹ năng lái xe.\n3. Xe vận chuyển hàng siêu trường, siêu trọng.\n4. Trách nhiệm của đơn vị kinh doanh vận tải.\n👉 Các câu khác thấy 'Cả ý 1 và 2' thường là BẪY SAI!"),
+            ("Bẫy 'Xe cảnh sát / công an'", "• Xe Cảnh sát ĐANG PHÁT TÍN HIỆU ƯU TIÊN (còi, đèn nhấp nháy): TUYỆT ĐỐI KHÔNG ĐƯỢC VƯỢT.\n• Xe Cảnh sát KHÔNG PHÁT TÍN HIỆU ƯU TIÊN: ĐƯỢC PHÉP VƯỢT khi đảm bảo an toàn."),
+            ("Bẫy 'Đi ngược chiều trên cao tốc'", "KỂ CẢ XE ƯU TIÊN (chữa cháy, công an) cũng TUYỆT ĐỐI KHÔNG ĐƯỢC đi ngược chiều trên làn đường một chiều của đường cao tốc!"),
+            ("Bẫy 'Niên hạn xe con dưới 9 chỗ'", "Xe ô tô con dưới 9 chỗ ngồi (không kinh doanh) KHÔNG CÓ NIÊN HẠN SỬ DỤNG. Tuyệt đối không chọn 20 năm hay 25 năm!")
+        ]
+    },
+    'special_sahin': {
+        'title': '🧩 14. Mẹo Độc Chiêu Sa Hình Thần Tốc (Bắt Bài Trong 2 Giây)',
+        'items': [
+            ("Mẹo 'Xe Công An'", "Trong sa hình có xe Công An:\n• Nhìn vào các đáp án, nếu đáp án nào có cụm 'Xe công an...' đi đầu tiên -> CHỌN NGAY (95% trúng).\n• Ngoại lệ: Nếu có xe con đã lọt hẳn vào ngã tư trước (Nhất chớm) thì xe con đó đi trước xe công an."),
+            ("Mẹo 'Xe con quay đầu'", "Xe con chỉ được quay đầu theo hướng vạch chỉ đường cho phép. Nếu mũi tên quay đầu ĐÈ VẠCH NGƯỜI ĐI BỘ hoặc ĐÈ VẠCH LIỀN -> BỊ COI LÀ VI PHẠM."),
+            ("Mẹo Biển Bắt đầu đường ưu tiên (I.401)", "Xe nào đứng trước mặt biển hình thoi viền vàng (hoặc biển tam giác to có đường giao cắt nét nhỏ W.207) -> XE ĐÓ ĐƯỢC ĐI TRƯỚC HẾT."),
+            ("Mẹo Biển Giao nhau với đường ưu tiên (W.208)", "Xe nào đứng trước mặt biển tam giác viền đỏ MŨI CHÚC XUỐNG DƯỚI -> XE ĐÓ ĐANG Ở ĐƯỜNG PHỤ, BẮT BUỘC PHẢI DỪNG LẠI NHƯỜNG ĐƯỜNG CHO TẤT CẢ CÁC XE KHÁC!"),
+            ("Mẹo Ngã tư đồng cấp (Bên phải không vướng)", "Ngã tư không có đèn, không có biển: Xét xe nào mà bên tay phải hoàn toàn trống (không có xe nào) -> Xe đó đi trước. Sau khi xe đó đi, bên phải của xe tiếp theo được giải phóng, cứ thế đi theo chiều kim đồng hồ.")
         ]
     }
 }
