@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-18",
+  "webOfficialSeconds": 0,
+  "webOfficialText": "0 giờ 0 phút",
+  "todaySeconds": 0,
+  "todayCompletedLessons": 0,
+  "totalAccumulatedSeconds": 133243,
+  "totalAccumulatedLessons": 427,
+  "currentCourseName": "Pháp Luật Giao thông Đường Bộ",
+  "currentLessonTitle": "Ôn tập 1",
+  "currentLessonMeta": "Bài 36 / 36",
+  "courseProgress": "100%",
+  "lastCourseUrl": "https://daotaoltx.eco-tek.com.vn/slides/phap-luat-giao-thong-uong-bo-173",
+  "lastSlideUrl": "https://daotaoltx.eco-tek.com.vn/slides/slide/on-tap-1-9145#lessonQuiz",
+  "isRunning": true,
+  "lastUpdate": 1792252159.2963786,
+  "lastHourlyAlert": 0,
+  "allCourses": [
+    {
+      "title": "Môn học kĩ thuật lái xe ô tô",
+      "href": "https://daotaoltx.eco-tek.com.vn/slides/mon-hoc-ki-thuat-lai-xe-o-to-172",
+      "timeSec": 51900,
+      "timeStr": "14 giờ 25 phút",
+      "progressPct": 0,
+      "isCompleted": false
+    },
+    {
+      "title": "Pháp Luật Giao thông Đường Bộ",
+      "href": "https://daotaoltx.eco-tek.com.vn/slides/phap-luat-giao-thong-uong-bo-173",
+      "timeSec": 227400,
+      "timeStr": "63 giờ 10 phút",
+      "progressPct": 0,
+      "isCompleted": false
+    },
+    {
+      "title": "Đạo Đức Người Lái Xe Ô Tô",
+      "href": "https://daotaoltx.eco-tek.com.vn/slides/ao-uc-nguoi-lai-xe-o-to-174",
+      "timeSec": 51000,
+      "timeStr": "14 giờ 10 phút",
+      "progressPct": 0,
+      "isCompleted": false
+    },
+    {
+      "title": "Cấu tạo và sửa chữa thông thường xe oto",
+      "href": "https://daotaoltx.eco-tek.com.vn/slides/cau-tao-va-sua-chua-thong-thuong-xe-oto-175",
+      "timeSec": 50400,
+      "timeStr": "14 giờ 0 phút",
+      "progressPct": 0,
+      "isCompleted": false
+    },
+    {
+      "title": "Mô phỏng các tình huống giao thông",
+      "href": "https://daotaoltx.eco-tek.com.vn/slides/mo-phong-cac-tinh-huong-giao-thong-242",
+      "timeSec": 14400,
+      "timeStr": "4 giờ 0 phút",
+      "progressPct": 0,
+      "isCompleted": false
+    }
+  ],
+  "collectedVideos": {},
+  "lastRemoteCommand": "start",
+  "history": {
+    "2026-10-04": {
+      "date": "2026-10-04",
+      "timeStr": "7 giờ 18 phút",
+      "seconds": 26280,
+      "lessons": 12
+    },
+    "2026-10-05": {
+      "date": "2026-10-05",
+      "timeStr": "7 giờ 18 phút",
+      "seconds": 0,
+      "lessons": 0
+    },
+    "2026-10-09": {
+      "date": "2026-10-09",
+      "timeStr": "0 giờ 0 phút",
+      "seconds": 0,
+      "lessons": 0
+    },
+    "2026-10-10": {
+      "date": "2026-10-10",
+      "timeStr": "0 giờ 0 phút",
+      "seconds": 0,
+      "lessons": 0
+    },
+    "2026-10-11": {
+      "date": "2026-10-11",
+      "timeStr": "0 giờ 0 phút",
+      "seconds": 0,
+      "lessons": 0
+    },
+    "2026-10-12": {
+      "date": "2026-10-12",
+      "timeStr": "7 giờ 18 phút",
+      "seconds": 18230,
+      "lessons": 12
+    },
+    "2026-10-13": {
+      "date": "2026-10-13",
+      "timeStr": "5 giờ 46 phút",
+      "seconds": 20782,
+      "lessons": 39
+    },
+    "2026-10-14": {
+      "date": "2026-10-14",
+      "timeStr": "6 giờ 31 phút",
+      "seconds": 23488,
+      "lessons": 141
+    },
+    "2026-10-15": {
+      "date": "2026-10-15",
+      "timeStr": "9 giờ 33 phút",
+      "seconds": 34386,
+      "lessons": 58
+    },
+    "2026-10-16": {
+      "date": "2026-10-16",
+      "timeStr": "0 giờ 0 phút",
+      "seconds": 0,
+      "lessons": 0
+    },
+    "2026-10-17": {
+      "date": "2026-10-17",
+      "timeStr": "0 giờ 32 phút",
+      "seconds": 1977,
+      "lessons": 142
+    }
+  },
+  "lastRemoteCommandTime": 1791868650.0
+}
