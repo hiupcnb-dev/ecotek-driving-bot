@@ -93,26 +93,63 @@ def remove_user_mistake(chat_id, qid):
         except Exception:
             pass
 
+# ================= 50 CÂU BẪY HAY SAI NHẤT TOÀN QUỐC =================
+TOP_50_TRICKY_IDS = [
+    15, 35, 41, 42, 43, 45, 59, 60, 61, 62, 75, 88, 91, 92, 93, 94, 
+    107, 118, 119, 120, 121, 122, 123, 144, 145, 146, 147, 148, 149, 150, 
+    151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 165, 
+    166, 172, 208, 223, 234, 236
+]
+
+def get_fixed_exam_set(set_num):
+    """
+    Trả về bộ đề thi cố định (từ Đề 1 đến Đề 15).
+    Đúng 40 câu hỏi / đề, cân đối ma trận chuẩn Cục Đường Bộ,
+    tổng 15 đề bao phủ 100% 600 câu hỏi không sót câu nào.
+    """
+    try:
+        set_num = int(set_num)
+    except Exception:
+        set_num = 1
+    if not (1 <= set_num <= 15):
+        set_num = 1
+    idx = set_num - 1
+    
+    crits = sorted([q for q in ALL_QUESTIONS if q.get('isCritical')], key=lambda x: x['id'])
+    non_crits = sorted([q for q in ALL_QUESTIONS if not q.get('isCritical')], key=lambda x: (x.get('chapter', 1), x['id']))
+    
+    set_questions = []
+    # 4 câu điểm liệt cố định cho mỗi đề
+    for i, q in enumerate(crits):
+        if i % 15 == idx:
+            set_questions.append(q)
+    # 36 câu lý thuyết các chương theo thứ tự phân bổ
+    for i, q in enumerate(non_crits):
+        if i % 15 == idx:
+            set_questions.append(q)
+            
+    return set_questions[:40]
+
 # ================= 1. SINH ĐỀ THI SÁT HẠCH CHUẨN 40 CÂU =================
 def generate_mock_exam(exam_id=None):
     """
     Tạo đề thi sát hạch chuẩn 40 câu theo ma trận Cục Đường bộ Việt Nam:
-    - 1-2 câu điểm liệt (BẮT BUỘC ĐÚNG)
-    - 8 câu Chương 1 (Khái niệm & Quy tắc)
-    - 2 câu Chương 2 (Nghiệp vụ vận tải)
-    - 1 câu Chương 3 (Văn hóa & Đạo đức)
-    - 2 câu Chương 4 (Kỹ thuật lái xe)
-    - 1 câu Chương 5 (Cấu tạo & Sửa chữa)
-    - 12 câu Chương 6 (Biển báo đường bộ)
-    - 12 câu Chương 7 (Sa hình giao thông)
-    Tổng cộng: ĐÚNG 40 CÂU
+    - Nếu exam_id từ 1 đến 15: Trả về Đề thi cố định chuẩn ma trận
+    - Nếu exam_id ngẫu nhiên: Sinh đề ngẫu nhiên theo tỷ lệ chuẩn
     """
     if not ALL_QUESTIONS:
         return []
 
-    # Nếu có exam_id cụ thể (Đề 1 đến Đề 15), dùng seed để cố định bộ đề
-    rng = random.Random(exam_id * 2026 if exam_id else None)
+    # Nếu có exam_id từ 1 đến 15 -> Lấy bộ đề cố định bao phủ 600 câu
+    if exam_id is not None:
+        try:
+            eid = int(exam_id)
+            if 1 <= eid <= 15:
+                return get_fixed_exam_set(eid)
+        except Exception:
+            pass
 
+    rng = random.Random()
     crits = [q for q in ALL_QUESTIONS if q.get('isCritical')]
     ch1 = [q for q in ALL_QUESTIONS if q.get('chapter') == 1 and not q.get('isCritical')]
     ch2 = [q for q in ALL_QUESTIONS if q.get('chapter') == 2 and not q.get('isCritical')]
@@ -138,7 +175,7 @@ def generate_mock_exam(exam_id=None):
         unused = [q for q in ALL_QUESTIONS if q not in selected]
         selected.extend(rng.sample(unused, min(remaining_needed, len(unused))))
 
-    # Xáo trộn thứ tự các câu trong đề
+    # Xáo trộn thứ tự các câu trong đề ngẫu nhiên
     rng.shuffle(selected)
     return selected[:40]
 
@@ -446,6 +483,15 @@ SECTIONS_CONFIG = {
         'badge': '🧩 Chương 6: Giải các thế sa hình giao thông',
         'total': 115,
         'filter': lambda q: q.get('chapter') == 6
+    },
+    'TOP50': {
+        'id': 'TOP50',
+        'code': 'top50',
+        'name': '⚠️ Top 50 Câu Hay Sai Nhất',
+        'full_name': '⚠️ Top 50 Câu Bẫy Kinh Điển Hay Sai Nhất (Thuộc Là Đỗ)',
+        'badge': '⚠️ TOP 50 CÂU BẪY HAY SAI NHẤT',
+        'total': 50,
+        'filter': lambda q: q.get('id') in TOP_50_TRICKY_IDS
     }
 }
 

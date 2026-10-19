@@ -81,6 +81,11 @@ try:
 except Exception as e:
     print(f"[Bot] Lỗi import c1_exam_engine: {e}")
 
+try:
+    import c1_simulation_handbook
+except Exception as e:
+    print(f"[Bot] Lỗi import c1_simulation_handbook: {e}")
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATUS_FILE = os.path.join(BASE_DIR, 'study_status.json')
 QUESTIONS_FILE = os.path.join(BASE_DIR, 'questions.json')
@@ -543,14 +548,15 @@ def play_podcast_playlist(chat_id, part_key, start_idx=0, count=5):
 # BÀN PHÍM ĐIỀU KHIỂN & BÁO CÁO MỚI NHẤT (TÍCH HỢP TƯƠNG TÁC GIỌNG NÓI & KHÓA C1)
 MAIN_KEYBOARD = {
     "keyboard": [
-        [{"text": "🎯 Thi Thử Sát Hạch (40 câu)"}, {"text": "⚠️ 60 Câu Điểm Liệt"}],
+        [{"text": "🎯 Thi Thử Sát Hạch (40 câu)"}, {"text": "📋 15 Đề Thi Cố Định"}],
+        [{"text": "⚠️ 60 Câu Điểm Liệt"}, {"text": "⚠️ Top 50 Câu Hay Sai"}],
+        [{"text": "🎬 120 Mô Phỏng V2.0.0"}, {"text": "💡 Mẹo Thi Đậu 100%"}],
         [{"text": "📻 Sách Nói 600 Câu (Rảnh Tay)"}, {"text": "🎙️ Học Bằng Giọng Nói (Bật/Tắt)"}],
-        [{"text": "❌ Sổ Tay Câu Sai"}, {"text": "💡 Mẹo Thi Đậu 100%"}],
-        [{"text": "🚗 Ôn Luyện Từng Câu"}, {"text": "🔴 Biển Báo (Có Ảnh)"}],
-        [{"text": "🧩 Sa Hình (Có Ảnh)"}, {"text": "🚛 Chuyên Đề Xe Tải C1"}],
-        [{"text": "🚀 Bật Học Tự Động Trên Máy"}, {"text": "👨‍🏫 Thầy AI Antigravity"}],
-        [{"text": "📊 Báo Cáo Chuẩn Web LMS"}, {"text": "📚 Toàn Bộ Khóa Học C1 (5 Môn)"}],
-        [{"text": "⏹️ Tạm Dừng Học"}, {"text": "🔑 Quản Lý Token AI"}]
+        [{"text": "🚗 Ôn Luyện Từng Câu"}, {"text": "❌ Sổ Tay Câu Sai"}],
+        [{"text": "🔴 Biển Báo (Có Ảnh)"}, {"text": "🧩 Sa Hình (Có Ảnh)"}],
+        [{"text": "🚛 Chuyên Đề Xe Tải C1"}, {"text": "👨‍🏫 Thầy AI Antigravity"}],
+        [{"text": "🚀 Bật Học Tự Động Trên Máy"}, {"text": "📊 Báo Cáo Chuẩn Web LMS"}],
+        [{"text": "⏹️ Tạm Dừng Học"}, {"text": "📚 Toàn Bộ Khóa Học C1 (5 Môn)"}]
     ],
     "resize_keyboard": True,
     "persistent": True
@@ -837,6 +843,94 @@ def analyze_question_reply(question_obj, user_choice):
             exp = exp[:117] + "..."
         res += f"💡 <i>{exp}</i>\n"
     return res
+
+# ================= CẨM NANG & ENGINE 120 TÌNH HUỐNG MÔ PHỎNG V2.0.0 =================
+
+def send_simulation_menu(chat_id, message_id=None):
+    text = """🎬 <b>CẨM NANG & MẸO 120 TÌNH HUỐNG MÔ PHỎNG V2.0.0</b>
+━━━━━━━━━━━━━━━━━━━
+📋 <b>Quy chế thi sát hạch chuẩn Cục Đường Bộ:</b>
+• <b>Số lượng:</b> 10 tình huống ngẫu nhiên
+• <b>Thang điểm:</b> 50 điểm (Thang 5 - 4 - 3 - 2 - 1 - 0)
+• <b>Tiêu chuẩn ĐẠT:</b> Từ <b>35 / 50 điểm trở lên</b>
+• 🎯 <b>Bí quyết vàng:</b> Bắt trọn <b>Mốc 5 điểm</b> ngay khi xuất hiện dấu hiệu nguy hiểm đầu tiên!
+
+👇 <i>Anh chọn nội dung tra cứu hoặc thi thử bên dưới:</i>"""
+    
+    kb = [
+        [{"text": "🎯 6 Mẹo Vàng Bắt Trọn Điểm 5", "callback_data": "sim_cues_summary"}],
+        [{"text": "🏙️ Chương 1: Đô thị (29 câu)", "callback_data": "sim_ch_1"},
+         {"text": "🌾 Chương 2: Nông thôn (14 câu)", "callback_data": "sim_ch_2"}],
+        [{"text": "🛣️ Chương 3: Cao tốc (20 câu)", "callback_data": "sim_ch_3"},
+         {"text": "⛰️ Chương 4: Đèo núi (10 câu)", "callback_data": "sim_ch_4"}],
+        [{"text": "🚚 Chương 5: Quốc lộ (17 câu)", "callback_data": "sim_ch_5"},
+         {"text": "💥 Chương 6: Tai nạn thực tế (30 câu)", "callback_data": "sim_ch_6"}],
+        [{"text": "🎲 Thi Thử 10 Câu Mô Phỏng Ngẫu Nhiên", "callback_data": "sim_mock_exam"}]
+    ]
+    if message_id:
+        return edit_message(chat_id, message_id, text, reply_markup={"inline_keyboard": kb})
+    return send_message(chat_id, text, reply_markup={"inline_keyboard": kb})
+
+def send_simulation_cues_summary(chat_id, message_id=None):
+    text = """🎯 <b>6 MẸO VÀNG BẮT TRỌN 5 ĐIỂM (120 MÔ PHỎNG V2.0.0)</b>
+━━━━━━━━━━━━━━━━━━━
+1. 🔴 <b>ĐÈN PHANH ĐỎ XE PHÍA TRƯỚC (32 tình huống):</b>
+   👉 Ngay khi đèn phanh đỏ xe trước vừa chớm sáng -> Bấm <b>SPACE</b> ngay lập tức!
+
+2. 🚗 <b>XE NGƯỢC CHIỀU / VƯỢT XE ĐÈ TIM ĐƯỜNG (26 tình huống):</b>
+   👉 Ngay khi bánh trước xe lấn đè lên vạch sơn tim đường -> Bấm <b>SPACE</b>!
+
+3. 🛑 <b>ĐẦU XE TỪ HẺM / ĐƯỜNG NHÁNH VỪA NHÔ RA (22 tình huống):</b>
+   👉 Đầu xe từ ngõ phụ vừa chạm mép đường chính hoặc vừa ló ra sau mép tường / cột A kính lái -> Bấm <b>SPACE</b>!
+
+4. 🚶 <b>NGƯỜI ĐI BỘ / XE ĐẠP BƯỚC XUỐNG ĐƯỜNG (18 tình huống):</b>
+   👉 Người đi bộ vừa đặt 1 bước chân xuống mép đường nhựa hoặc bánh xe đạp vừa lăn xuống đường -> Bấm <b>SPACE</b>!
+
+5. ⚡ <b>XE CHUYỂN LÀN CẮT MẶT / TẠT ĐẦU (14 tình huống):</b>
+   👉 Bánh trước xe chuyển làn vừa đè lên vạch phân làn xe bạn -> Bấm <b>SPACE</b>!
+
+6. 🐄 <b>GIA SÚC (TRÂU, BÒ) BƯỚC LÊN MẶT ĐƯỜNG (8 tình huống):</b>
+   👉 Con bò đầu tiên vừa quay đầu bước chân lên mặt đường nhựa -> Bấm <b>SPACE</b>!"""
+    kb = [
+        [{"text": "📋 Xem Chi Tiết 6 Chương", "callback_data": "sim_menu"}],
+        [{"text": "🎲 Thi Thử 10 Câu Mô Phỏng", "callback_data": "sim_mock_exam"}]
+    ]
+    if message_id:
+        return edit_message(chat_id, message_id, text, reply_markup={"inline_keyboard": kb})
+    return send_message(chat_id, text, reply_markup={"inline_keyboard": kb})
+
+def send_simulation_chapter_list(chat_id, ch_num, page=0, message_id=None):
+    sits = c1_simulation_handbook.get_situations_by_chapter(ch_num)
+    ch_name = c1_simulation_handbook.CHAPTER_NAMES.get(int(ch_num), f"Chương {ch_num}")
+    
+    sorted_ids = sorted(sits.keys())
+    page_size = 6
+    total_pages = (len(sorted_ids) + page_size - 1) // page_size
+    page = max(0, min(page, total_pages - 1))
+    
+    start_idx = page * page_size
+    end_idx = min(start_idx + page_size, len(sorted_ids))
+    curr_items = sorted_ids[start_idx:end_idx]
+    
+    text = f"📂 <b>{ch_name} (Trang {page + 1}/{total_pages})</b>\n━━━━━━━━━━━━━━━━━━━\n"
+    kb = []
+    for sid in curr_items:
+        s = sits[sid]
+        text += f"• <b>Câu #{sid}:</b> {s['title']}\n  👉 <i>Điểm căn: {s['cue']}</i>\n\n"
+        kb.append([{"text": f"🔍 Điểm căn Câu #{sid}: {s['title'][:30]}...", "callback_data": f"sim_detail_{sid}"}])
+        
+    nav_row = []
+    if page > 0:
+        nav_row.append({"text": "⬅️ Trang Trước", "callback_data": f"sim_page_{ch_num}_{page - 1}"})
+    if page < total_pages - 1:
+        nav_row.append({"text": "Trang Sau ➡️", "callback_data": f"sim_page_{ch_num}_{page + 1}"})
+    if nav_row:
+        kb.append(nav_row)
+    kb.append([{"text": "🔙 Trở Lại Menu Mô Phỏng", "callback_data": "sim_menu"}])
+    
+    if message_id:
+        return edit_message(chat_id, message_id, text, reply_markup={"inline_keyboard": kb})
+    return send_message(chat_id, text, reply_markup={"inline_keyboard": kb})
 
 # ================= THI THỬ SÁT HẠCH THẬT (40 CÂU - 24 PHÚT) =================
 
@@ -1722,6 +1816,52 @@ def handle_telegram_update(update):
                 state_str = "BẬT (Tự động đọc đề)" if new_state else "TẮT (Chỉ đọc khi bấm nút)"
                 answer_callback(cb_id, text=f"Đã {state_str}!")
                 send_voice_settings_menu(chat_id, message_id)
+
+            # ================= CÁC CALLBACK MÔ PHỎNG 120 TÌNH HUỐNG =================
+            elif data == 'sim_menu' or data == 'sim_back_main':
+                answer_callback(cb_id)
+                send_simulation_menu(chat_id, message_id)
+
+            elif data == 'sim_cues_summary':
+                answer_callback(cb_id, text="6 Mẹo vàng bắt điểm 5!")
+                send_simulation_cues_summary(chat_id, message_id)
+
+            elif data.startswith('sim_ch_'):
+                ch_num = int(data.replace('sim_ch_', ''))
+                answer_callback(cb_id)
+                send_simulation_chapter_list(chat_id, ch_num, page=0, message_id=message_id)
+
+            elif data.startswith('sim_page_'):
+                parts = data.split('_')
+                ch_num = int(parts[2])
+                pg = int(parts[3])
+                answer_callback(cb_id)
+                send_simulation_chapter_list(chat_id, ch_num, page=pg, message_id=message_id)
+
+            elif data.startswith('sim_detail_'):
+                sit_id = int(data.replace('sim_detail_', ''))
+                answer_callback(cb_id, text=f"Tình huống #{sit_id}")
+                detail = c1_simulation_handbook.format_situation_detail(sit_id)
+                kb = [
+                    [{"text": f"⬅️ Câu #{max(1, sit_id - 1)}", "callback_data": f"sim_detail_{max(1, sit_id - 1)}"},
+                     {"text": f"Câu #{min(120, sit_id + 1)} ➡️", "callback_data": f"sim_detail_{min(120, sit_id + 1)}"}],
+                    [{"text": "🔙 Trở Lại Danh Sách", "callback_data": "sim_menu"}]
+                ]
+                edit_message(chat_id, message_id, detail, reply_markup={"inline_keyboard": kb})
+
+            elif data == 'sim_mock_exam':
+                answer_callback(cb_id, text="Đang tạo đề thi thử 10 câu...")
+                test_ids = c1_simulation_handbook.generate_mock_simulation_test()
+                msg = "🎯 <b>ĐỀ THI THỬ 10 CÂU MÔ PHỎNG V2.0.0 CHUẨN MA TRẬN</b>\n━━━━━━━━━━━━━━━━━━━\n"
+                msg += "📋 <i>Đề thi gồm 10 tình huống lấy ngẫu nhiên theo tỷ lệ chuẩn Cục Đường Bộ. Bấm vào từng câu để xem mẹo điểm căn 5 điểm:</i>\n\n"
+                kb = []
+                for idx, sid in enumerate(test_ids):
+                    s = c1_simulation_handbook.get_situation(sid)
+                    msg += f"<b>Câu {idx + 1} (Tình huống #{sid}):</b> {s['title']}\n"
+                    kb.append([{"text": f"🎯 Điểm căn Câu {idx + 1} (#{sid})", "callback_data": f"sim_detail_{sid}"}])
+                kb.append([{"text": "🔄 Đổi Đề Thi Thử Khác", "callback_data": "sim_mock_exam"}])
+                kb.append([{"text": "🔙 Menu 120 Mô Phỏng", "callback_data": "sim_menu"}])
+                edit_message(chat_id, message_id, msg, reply_markup={"inline_keyboard": kb})
             return
 
         if 'message' in update:
@@ -1798,6 +1938,33 @@ Thời gian web LMS ghi nhận: <b>{status.get('webOfficialText', '7 giờ 18 ph
             # TÍNH NĂNG ÔN LUYỆN 600 CÂU HỎI THEO PHẦN
             elif text in ["🚗 Ôn Luyện Từng Câu", "🚗 Ôn Thi Sát Hạch C1", "/onthi", "ôn thi"]:
                 send_practice_menu(chat_id)
+
+            # TÍNH NĂNG 15 ĐỀ THI CỐ ĐỊNH CHUẨN C1 (QUÉT SẠCH 600 CÂU)
+            elif text in ["📋 15 Đề Thi Cố Định", "/15de", "15 đề", "15 de", "đề cố định", "de co dinh"]:
+                send_mock_exam_menu(chat_id)
+
+            # TÍNH NĂNG TOP 50 CÂU BẪY HAY SAI NHẤT TOÀN QUỐC
+            elif text in ["⚠️ Top 50 Câu Hay Sai", "/top50", "top 50", "câu hay sai", "cau hay sai", "top câu sai"]:
+                send_practice_question(chat_id, 'TOP50', 0)
+
+            # TÍNH NĂNG 120 TÌNH HUỐNG MÔ PHỎNG V2.0.0
+            elif text in ["🎬 120 Mô Phỏng V2.0.0", "/mophong", "mô phỏng", "mo phong", "120 câu", "120 tình huống"]:
+                send_simulation_menu(chat_id)
+
+            # TRA CỨU NHANH TÌNH HUỐNG MÔ PHỎNG: mp 5 hoặc /mophong 25
+            elif text.lower().startswith(('/mophong ', 'mp ', 'tình huống ')):
+                parts = text.split()
+                if len(parts) >= 2 and parts[1].isdigit():
+                    sit_id = int(parts[1])
+                    if 1 <= sit_id <= 120:
+                        detail = c1_simulation_handbook.format_situation_detail(sit_id)
+                        kb = [
+                            [{"text": f"⬅️ Câu #{max(1, sit_id - 1)}", "callback_data": f"sim_detail_{max(1, sit_id - 1)}"},
+                             {"text": f"Câu #{min(120, sit_id + 1)} ➡️", "callback_data": f"sim_detail_{min(120, sit_id + 1)}"}],
+                            [{"text": "🔙 Menu 120 Mô Phỏng", "callback_data": "sim_menu"}]
+                        ]
+                        send_message(chat_id, detail, reply_markup={"inline_keyboard": kb})
+                        return
 
             # TÍNH NĂNG 60 CÂU ĐIỂM LIỆT (CHUẨN XÁC 60 CÂU CẤM SAI)
             elif text in ["⚠️ 60 Câu Điểm Liệt", "/diemliet", "điểm liệt"]:
