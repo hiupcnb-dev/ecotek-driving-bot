@@ -2313,10 +2313,50 @@ def route_ask_ai():
         reply = "Dạ em chào anh Hiếu! Em là Antigravity đây ạ. Anh cần hỏi câu nào hay mẹo gì cứ nhắn em nhé!"
     return jsonify({'ok': True, 'reply': reply})
 
+# ================= TELEGRAM WEBHOOK 24/7 ENDPOINTS =================
+@app.route('/webhook', methods=['GET', 'POST'])
+def route_webhook():
+    if request.method == 'GET':
+        return jsonify({
+            'ok': True,
+            'service': 'EcoTek Driving Cloud Webhook 24/7',
+            'status': 'active',
+            'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        })
+    update = request.get_json(force=True, silent=True)
+    if update:
+        # Xử lý update trong worker thread riêng để trả về HTTP 200 OK ngay lập tức cho Telegram (<50ms)
+        try:
+            threading.Thread(target=handle_telegram_update, args=(update,), daemon=True).start()
+        except Exception as e:
+            print(f"[Webhook Error] Lỗi khởi chạy thread update: {e}")
+    return jsonify({'ok': True})
+
+@app.route('/set_webhook', methods=['GET', 'POST'])
+def route_set_webhook():
+    webhook_url = f"{CONFIG['RENDER_EXTERNAL_URL'].rstrip('/')}/webhook"
+    try:
+        res = telegram_api('setWebhook', {
+            'url': webhook_url,
+            'drop_pending_updates': False,
+            'allowed_updates': ["message", "callback_query"]
+        })
+        return jsonify({'ok': True, 'webhook_url': webhook_url, 'telegram_response': res})
+    except Exception as e:
+        return jsonify({'ok': False, 'error': str(e)}), 500
+
+@app.route('/webhook_info', methods=['GET'])
+def route_webhook_info():
+    try:
+        res = telegram_api('getWebhookInfo')
+        return jsonify({'ok': True, 'info': res})
+    except Exception as e:
+        return jsonify({'ok': False, 'error': str(e)}), 500
+
 # ================= ANTI-SLEEP KEEP-ALIVE THREAD =================
 def anti_sleep_keep_alive():
-    """Tự động ping Render web service mỗi 9 phút (540s) để giữ bot thức 24/7/365"""
-    time.sleep(30)
+    """Tự động ping Render web service mỗi 5 phút (300s) để giữ bot thức 24/7/365"""
+    time.sleep(15)
     print(f"[Keep-Alive] Khởi động cơ chế chống ngủ đông cho Cloud Service: {CONFIG['RENDER_EXTERNAL_URL']}")
     while True:
         try:
@@ -2328,24 +2368,40 @@ def anti_sleep_keep_alive():
                 print(f"[Keep-Alive] Ping trả về mã {r.status_code}")
         except Exception as e:
             print(f"[Keep-Alive] Cảnh báo ping: {e}")
-        time.sleep(540)
+        time.sleep(300)
 
 # ================= BACKGROUND THREADS INITIALIZATION =================
-def start_background_workers():
-    # 1. Xóa Webhook cũ để Long Polling hoạt động trơn tru
+def setup_cloud_webhook():
+    webhook_url = f"{CONFIG['RENDER_EXTERNAL_URL'].rstrip('/')}/webhook"
+    print(f"[Telegram Bot] Đang kích hoạt Webhook 24/7 tới: {webhook_url}")
     try:
-        telegram_api('deleteWebhook', {'drop_pending_updates': False})
-        print("[Telegram Bot] Đã dọn sạch Webhook cũ, sẵn sàng chạy Long Polling 24/7 trên Cloud.")
+        res = telegram_api('setWebhook', {
+            'url': webhook_url,
+            'drop_pending_updates': False,
+            'allowed_updates': ["message", "callback_query"]
+        })
+        print(f"[Telegram Bot] Kết quả thiết lập Webhook: {res}")
+        return res.get('ok', False)
     except Exception as e:
-        print(f"[Telegram Bot] Lỗi dọn Webhook: {e}")
+        print(f"[Telegram Bot] Lỗi thiết lập Webhook: {e}")
+        return False
 
-    # 2. Khởi chạy Keep-Alive Thread
+def start_background_workers():
+    # 1. Khởi chạy Keep-Alive Thread
     t_keep_alive = threading.Thread(target=anti_sleep_keep_alive, daemon=True)
     t_keep_alive.start()
 
-    # 3. Khởi chạy Telegram Polling Thread
-    t_polling = threading.Thread(target=telegram_polling_loop, daemon=True)
-    t_polling.start()
+    # 2. Kích hoạt Webhook 24/7 trên Render Cloud
+    webhook_ok = False
+    ext_url = CONFIG.get('RENDER_EXTERNAL_URL', '')
+    if ext_url and ext_url.startswith('https://'):
+        webhook_ok = setup_cloud_webhook()
+
+    # 3. Chỉ bật Long Polling dự phòng nếu Webhook không được cấu hình
+    if not webhook_ok:
+        print("[Telegram Bot] Không dùng Webhook HTTPS, kích hoạt Long Polling dự phòng...")
+        t_polling = threading.Thread(target=telegram_polling_loop, daemon=True)
+        t_polling.start()
 
 start_background_workers()
 
