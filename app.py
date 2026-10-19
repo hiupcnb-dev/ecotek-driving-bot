@@ -2348,7 +2348,7 @@ def route_set_webhook():
 @app.route('/webhook_info', methods=['GET'])
 def route_webhook_info():
     try:
-        res = telegram_api('getWebhookInfo')
+        res = telegram_api('getWebhookInfo', {})
         return jsonify({'ok': True, 'info': res})
     except Exception as e:
         return jsonify({'ok': False, 'error': str(e)}), 500
