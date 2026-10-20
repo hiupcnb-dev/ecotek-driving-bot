@@ -22,8 +22,6 @@ if hasattr(sys.stderr, 'reconfigure'):
 
 def get_font(size=16, bold=False):
     font_paths = [
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
         r"C:\Windows\Fonts\arialbd.ttf" if bold else r"C:\Windows\Fonts\arial.ttf",
         r"C:\Windows\Fonts\tahomabd.ttf" if bold else r"C:\Windows\Fonts\tahoma.ttf",
         r"C:\Windows\Fonts\segoeui.ttf",
@@ -582,16 +580,34 @@ def generate_question_card_image(q_obj):
 
     # 1. Kiểm tra ảnh gốc chính thức từ thư mục assets/images
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    real_img_path = os.path.join(base_dir, 'driving-theory-app', 'assets', 'images', f'cau_{qid}.webp')
-    if not os.path.exists(real_img_path) and q_obj.get('image'):
-        real_img_path = os.path.join(base_dir, 'driving-theory-app', q_obj['image'].replace('/', os.sep))
+    img_candidates = [
+        os.path.join(base_dir, 'assets', 'images', f'cau_{qid}.webp'),
+        os.path.join(base_dir, 'assets', 'images', f'{qid}.webp'),
+        os.path.join(base_dir, 'driving-theory-app', 'assets', 'images', f'cau_{qid}.webp'),
+        os.path.join(os.path.dirname(base_dir), 'driving-theory-app', 'assets', 'images', f'cau_{qid}.webp'),
+    ]
+    if q_obj.get('image'):
+        img_rel = q_obj['image'].replace('/', os.sep).lstrip('\\/')
+        img_candidates.extend([
+            os.path.join(base_dir, img_rel),
+            os.path.join(base_dir, 'driving-theory-app', img_rel),
+            os.path.join(os.path.dirname(base_dir), 'driving-theory-app', img_rel),
+            os.path.join(base_dir, 'assets', 'images', os.path.basename(img_rel)),
+            os.path.join(base_dir, 'driving-theory-app', 'assets', 'images', os.path.basename(img_rel)),
+        ])
+
+    real_img_path = None
+    for cand in img_candidates:
+        if cand and os.path.exists(cand):
+            real_img_path = cand
+            break
 
     real_img = None
-    if os.path.exists(real_img_path):
+    if real_img_path:
         try:
             real_img = Image.open(real_img_path).convert('RGB')
         except Exception as e:
-            print(f"[Image Gen] Lỗi nạp ảnh gốc câu {qid}: {e}")
+            print(f"[Image Gen] Lỗi nạp ảnh gốc câu {qid} từ {real_img_path}: {e}")
 
     if real_img:
         # Tự động scale ảnh gốc theo tỷ lệ chuẩn, đặt trong khung nền sáng sắc nét
