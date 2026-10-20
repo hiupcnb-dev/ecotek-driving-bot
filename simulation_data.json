@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1,
+    "ch": 1,
+    "title": "Người đi bộ khuất sau xe tải sang đường",
+    "cue": "Người đi bộ vừa bước chân qua đuôi xe tải",
+    "group": "pedestrian",
+    "h_start": 6.7,
+    "h_end": 11.2,
+    "duration": 18.0
+  },
+  {
+    "id": 2,
+    "ch": 1,
+    "title": "Người đi bộ vượt dải phân cách sang đường",
+    "cue": "Người đi bộ vừa bước chân qua dải phân cách",
+    "group": "pedestrian",
+    "h_start": 7.4,
+    "h_end": 11.9,
+    "duration": 18.0
+  },
+  {
+    "id": 3,
+    "ch": 1,
+    "title": "Xe con phía trước phanh gấp tránh xe máy",
+    "cue": "Đèn phanh xe con phía trước vừa chớm đỏ",
+    "group": "brake_light",
+    "h_start": 8.1,
+    "h_end": 12.6,
+    "duration": 18.0
+  },
+  {
+    "id": 4,
+    "ch": 1,
+    "title": "Xe con từ đường nhánh rẽ phải vào ngã ba",
+    "cue": "Đầu xe con từ đường nhánh vừa chạm mép đường",
+    "group": "intersection",
+    "h_start": 8.8,
+    "h_end": 13.3,
+    "duration": 18.0
+  },
+  {
+    "id": 5,
+    "ch": 1,
+    "title": "Xe máy rẽ trái tạt đầu xe ô tô của bạn",
+    "cue": "Xe máy bắt đầu đánh lái chớm sang làn xe mình",
+    "group": "cut_in",
+    "h_start": 9.5,
+    "h_end": 14.0,
+    "duration": 18.0
+  },
+  {
+    "id": 6,
+    "ch": 1,
+    "title": "Xe buýt lấn làn vượt xe khác ở chiều đối diện",
+    "cue": "Đầu xe buýt ngược chiều vừa lấn qua vạch tim đường",
+    "group": "lane_cross",
+    "h_start": 10.2,
+    "h_end": 14.7,
+    "duration": 18.0
+  },
+  {
+    "id": 7,
+    "ch": 1,
+    "title": "Xe con phía trước phanh gấp dừng chờ người đi bộ",
+    "cue": "Đèn phanh đỏ xe con trước vừa bật sáng",
+    "group": "brake_light",
+    "h_start": 10.9,
+    "h_end": 15.4,
+    "duration": 18.0
+  },
+  {
+    "id": 8,
+    "ch": 1,
+    "title": "Xe đạp từ ngõ nhỏ bất ngờ lao ra",
+    "cue": "Bánh trước xe đạp vừa chạm mép vỉa hè lao xuống đường",
+    "group": "pedestrian",
+    "h_start": 6.1,
+    "h_end": 10.6,
+    "duration": 18.0
+  },
+  {
+    "id": 9,
+    "ch": 1,
+    "title": "Xe tải phía trước lấn làn vượt xe khác",
+    "cue": "Đầu xe tải vừa lấn sang làn đường của bạn",
+    "group": "lane_cross",
+    "h_start": 6.8,
+    "h_end": 11.3,
+    "duration": 18.0
+  },
+  {
+    "id": 10,
+    "ch": 1,
+    "title": "Xe con từ đường nhánh bên trái nhập vào đường chính",
+    "cue": "Đầu xe con bên trái vừa nhô ra khỏi tường rào",
+    "group": "intersection",
+    "h_start": 7.5,
+    "h_end": 12.0,
+    "duration": 18.0
+  },
+  {
+    "id": 11,
+    "ch": 1,
+    "title": "Xe bồn bê tông từ đường nhánh bên phải lao ra ngã ba",
+    "cue": "Đầu xe bồn vừa xuất hiện ngang cột A bên phải",
+    "group": "intersection",
+    "h_start": 8.2,
+    "h_end": 12.7,
+    "duration": 18.0
+  },
+  {
+    "id": 12,
+    "ch": 1,
+    "title": "Xe máy bất ngờ rẽ trái trước đầu xe con",
+    "cue": "Xe máy bắt đầu xi-nhan và bánh xe chạm vạch phân làn",
+    "group": "cut_in",
+    "h_start": 8.9,
+    "h_end": 13.4,
+    "duration": 18.0
+  },
+  {
+    "id": 13,
+    "ch": 1,
+    "title": "Xe máy chở hàng cồng kềnh ngã ra đường",
+    "cue": "Xe máy bắt đầu chao đảo nghiêng đổ",
+    "group": "cut_in",
+    "h_start": 9.6,
+    "h_end": 14.1,
+    "duration": 18.0
+  },
+  {
+    "id": 14,
+    "ch": 1,
+    "title": "Xe tải đi qua gầm cầu chui khuất tầm nhìn",
+    "cue": "Đầu xe tải ngược chiều vừa nhô ra khỏi chân cầu vượt",
+    "group": "lane_cross",
+    "h_start": 10.3,
+    "h_end": 14.8,
+    "duration": 18.0
+  },
+  {
+    "id": 15,
+    "ch": 1,
+    "title": "Xe con phía trước phanh gấp dừng tránh xe máy",
+    "cue": "Đèn phanh xe con trước vừa chớm đỏ",
+    "group": "brake_light",
+    "h_start": 11.0,
+    "h_end": 15.5,
+    "duration": 18.0
+  },
+  {
+    "id": 16,
+    "ch": 1,
+    "title": "Xe con bên trái rẽ trái tạt đầu xe bạn",
+    "cue": "Đầu xe con bên trái đè lên vạch tim đường",
+    "group": "cut_in",
+    "h_start": 6.2,
+    "h_end": 10.7,
+    "duration": 18.0
+  },
+  {
+    "id": 17,
+    "ch": 1,
+    "title": "Xe buýt mở cửa cho khách xuống sang đường ẩu",
+    "cue": "Hành khách vừa bước chân xuống lòng đường",
+    "group": "pedestrian",
+    "h_start": 6.9,
+    "h_end": 11.4,
+    "duration": 18.0
+  },
+  {
+    "id": 18,
+    "ch": 1,
+    "title": "Tài xế xe đỗ bên đường bất ngờ mở cửa xe",
+    "cue": "Cánh cửa xe con màu bạc vừa hé mở khoảng 10cm",
+    "group": "car_door",
+    "h_start": 7.6,
+    "h_end": 12.1,
+    "duration": 18.0
+  },
+  {
+    "id": 19,
+    "ch": 1,
+    "title": "Xe con đỗ bên phải đường bắt đầu xuất phát",
+    "cue": "Bánh trước xe con bên phải vừa đánh lái chồm ra làn đường",
+    "group": "cut_in",
+    "h_start": 8.3,
+    "h_end": 12.8,
+    "duration": 18.0
+  },
+  {
+    "id": 20,
+    "ch": 1,
+    "title": "Xe máy đỗ bên lề đường bất ngờ quay đầu",
+    "cue": "Xe máy vừa quay ngang đầu xe hướng ra giữa đường",
+    "group": "cut_in",
+    "h_start": 9.0,
+    "h_end": 13.5,
+    "duration": 18.0
+  },
+  {
+    "id": 21,
+    "ch": 1,
+    "title": "Xe con phía trước phanh gấp nhường đường cho xe quay đầu",
+    "cue": "Đèn phanh đỏ xe con trước vừa sáng lên",
+    "group": "brake_light",
+    "h_start": 9.7,
+    "h_end": 14.2,
+    "duration": 18.0
+  },
+  {
+    "id": 22,
+    "ch": 1,
+    "title": "Xe con từ ngã tư không có đèn tín hiệu lao ra",
+    "cue": "Đầu xe con vừa nhô qua mép tường ngã tư",
+    "group": "intersection",
+    "h_start": 10.4,
+    "h_end": 14.9,
+    "duration": 18.0
+  },
+  {
+    "id": 23,
+    "ch": 1,
+    "title": "Xe tải lấn làn vượt xe rác đang dừng",
+    "cue": "Đầu xe tải ngược chiều vừa vượt qua thân xe rác",
+    "group": "lane_cross",
+    "h_start": 11.1,
+    "h_end": 15.6,
+    "duration": 18.0
+  },
+  {
+    "id": 24,
+    "ch": 1,
+    "title": "Xe tải ngược chiều lấn làn tránh đống cát ven đường",
+    "cue": "Bánh trước xe tải vừa chạm vào vạch kẻ tim đường",
+    "group": "lane_cross",
+    "h_start": 6.3,
+    "h_end": 10.8,
+    "duration": 18.0
+  },
+  {
+    "id": 25,
+    "ch": 1,
+    "title": "Xe con đi lùi ra khỏi gara nhà bên phải",
+    "cue": "Đuôi xe con vừa nhô ra khỏi cửa gara",
+    "group": "intersection",
+    "h_start": 7.0,
+    "h_end": 11.5,
+    "duration": 18.0
+  },
+  {
+    "id": 26,
+    "ch": 1,
+    "title": "Xe máy lách qua chướng ngại vật lao sang làn bạn",
+    "cue": "Đầu xe máy vừa chớm đè vạch phân cách",
+    "group": "cut_in",
+    "h_start": 7.7,
+    "h_end": 12.2,
+    "duration": 18.0
+  },
+  {
+    "id": 27,
+    "ch": 1,
+    "title": "Xe cứu thương ưu tiên từ đường nhánh lao vào ngã tư",
+    "cue": "Đầu xe cứu thương vừa xuất hiện giữa ngã tư",
+    "group": "intersection",
+    "h_start": 8.4,
+    "h_end": 12.9,
+    "duration": 18.0
+  },
+  {
+    "id": 28,
+    "ch": 1,
+    "title": "Xe con phía trước phanh gấp vì người đi bộ qua đường",
+    "cue": "Đèn phanh đỏ xe con phía trước vừa chớm sáng",
+    "group": "brake_light",
+    "h_start": 9.1,
+    "h_end": 13.6,
+    "duration": 18.0
+  },
+  {
+    "id": 29,
+    "ch": 1,
+    "title": "Xe máy đi ngược chiều lách trước đầu xe bạn",
+    "cue": "Bánh trước xe máy ngược chiều vừa rẽ ngang trước mặt",
+    "group": "cut_in",
+    "h_start": 9.8,
+    "h_end": 14.3,
+    "duration": 18.0
+  },
+  {
+    "id": 30,
+    "ch": 2,
+    "title": "Đàn bò bất ngờ đi từ lề đường ra giữa đường",
+    "cue": "Con bò đầu tiên vừa bước chân xuống lòng đường",
+    "group": "animal",
+    "h_start": 10.5,
+    "h_end": 15.0,
+    "duration": 18.0
+  },
+  {
+    "id": 31,
+    "ch": 2,
+    "title": "Đàn bò đứng gặm cỏ tràn ra làn xe chạy",
+    "cue": "Con bò quay đầu bước sang mép đường nhựa",
+    "group": "animal",
+    "h_start": 11.2,
+    "h_end": 15.7,
+    "duration": 18.0
+  },
+  {
+    "id": 32,
+    "ch": 2,
+    "title": "Người đi bộ từ đường bờ ruộng băng qua đường",
+    "cue": "Người đi bộ vừa bước chân lên mép mặt đường nhựa",
+    "group": "pedestrian",
+    "h_start": 6.4,
+    "h_end": 10.9,
+    "duration": 18.0
+  },
+  {
+    "id": 33,
+    "ch": 2,
+    "title": "Trẻ em bất ngờ đuổi theo bóng chạy ra đường",
+    "cue": "Đứa bé đầu tiên vừa chạy vụt ra khỏi cổng nhà",
+    "group": "pedestrian",
+    "h_start": 7.1,
+    "h_end": 11.6,
+    "duration": 18.0
+  },
+  {
+    "id": 34,
+    "ch": 2,
+    "title": "Xe máy chở nông sản cồng kềnh rẽ gấp ở khúc cua",
+    "cue": "Đầu xe máy xuất hiện ở khúc cua khuất tầm nhìn",
+    "group": "intersection",
+    "h_start": 7.8,
+    "h_end": 12.3,
+    "duration": 18.0
+  },
+  {
+    "id": 35,
+    "ch": 2,
+    "title": "Xe con phía trước phanh gấp vì gặp ổ gà lớn",
+    "cue": "Đèn phanh đỏ xe con trước vừa chớm sáng",
+    "group": "brake_light",
+    "h_start": 8.5,
+    "h_end": 13.0,
+    "duration": 18.0
+  },
+  {
+    "id": 36,
+    "ch": 2,
+    "title": "Xe máy từ đường đất nông thôn lao thẳng ra đường nhựa",
+    "cue": "Bánh trước xe máy vừa chạm vào mép đường nhựa",
+    "group": "intersection",
+    "h_start": 9.2,
+    "h_end": 13.7,
+    "duration": 18.0
+  },
+  {
+    "id": 37,
+    "ch": 2,
+    "title": "Khúc cua nguy hiểm có đống gạch xây dựng lấn đường",
+    "cue": "Đầu xe máy ngược chiều xuất hiện sau đống gạch",
+    "group": "intersection",
+    "h_start": 9.9,
+    "h_end": 14.4,
+    "duration": 18.0
+  },
+  {
+    "id": 38,
+    "ch": 2,
+    "title": "Xe tải ngược chiều lấn làn ở khúc cua gấp",
+    "cue": "Đầu xe tải ngược chiều vừa đè lên vạch tim đường",
+    "group": "lane_cross",
+    "h_start": 10.6,
+    "h_end": 15.1,
+    "duration": 18.0
+  },
+  {
+    "id": 39,
+    "ch": 2,
+    "title": "Xe tải chở đất từ mỏ đất rẽ vào đường chính",
+    "cue": "Bánh trước xe tải đất vừa chạm mặt đường chính",
+    "group": "intersection",
+    "h_start": 11.3,
+    "h_end": 15.8,
+    "duration": 18.0
+  },
+  {
+    "id": 40,
+    "ch": 2,
+    "title": "Khúc cua khuất tầm nhìn gặp trâu bò chắn đường",
+    "cue": "Thân con trâu xuất hiện trọn vẹn sau rặng cây",
+    "group": "animal",
+    "h_start": 6.5,
+    "h_end": 11.0,
+    "duration": 18.0
+  },
+  {
+    "id": 41,
+    "ch": 2,
+    "title": "Xe con phía trước phanh gấp vì đường bị sạt lở",
+    "cue": "Đèn phanh đỏ xe con phía trước vừa sáng",
+    "group": "brake_light",
+    "h_start": 7.2,
+    "h_end": 11.7,
+    "duration": 18.0
+  },
+  {
+    "id": 42,
+    "ch": 2,
+    "title": "Đoạn đường hẹp gặp xe máy đi ngược chiều tốc độ cao",
+    "cue": "Đầu xe máy vừa xuất hiện sau lùm tre",
+    "group": "cut_in",
+    "h_start": 7.9,
+    "h_end": 12.4,
+    "duration": 18.0
+  },
+  {
+    "id": 43,
+    "ch": 2,
+    "title": "Xe tải chở mía quá tải nghiêng ngả ở khúc cua",
+    "cue": "Thân xe tải mía bắt đầu nghiêng lấn sang làn bạn",
+    "group": "lane_cross",
+    "h_start": 8.6,
+    "h_end": 13.1,
+    "duration": 18.0
+  },
+  {
+    "id": 44,
+    "ch": 3,
+    "title": "Xe con chuyển làn cắt mặt không xi-nhan trên cao tốc",
+    "cue": "Bánh trước xe con vừa đè vạch đứt chuyển làn sang làn bạn",
+    "group": "cut_in",
+    "h_start": 9.3,
+    "h_end": 13.8,
+    "duration": 18.0
+  },
+  {
+    "id": 45,
+    "ch": 3,
+    "title": "Xe tải phía trước phanh gấp tránh sự cố",
+    "cue": "Đèn phanh đỏ xe tải vừa chớm sáng lên",
+    "group": "brake_light",
+    "h_start": 10.0,
+    "h_end": 14.5,
+    "duration": 18.0
+  },
+  {
+    "id": 46,
+    "ch": 3,
+    "title": "Xe con vượt phải tạt đầu nguy hiểm trên cao tốc",
+    "cue": "Đầu xe con bên phải vừa chớm vượt qua đầu xe bạn",
+    "group": "cut_in",
+    "h_start": 10.7,
+    "h_end": 15.2,
+    "duration": 18.0
+  },
+  {
+    "id": 47,
+    "ch": 3,
+    "title": "Xe cứu thương xin vượt từ phía sau trên cao tốc",
+    "cue": "Nhìn gương chiếu hậu thấy xe cứu thương bật đèn nháy",
+    "group": "cut_in",
+    "h_start": 11.4,
+    "h_end": 15.9,
+    "duration": 18.0
+  },
+  {
+    "id": 48,
+    "ch": 3,
+    "title": "Xe con chuyển làn bất ngờ từ làn dừng khẩn cấp ra",
+    "cue": "Bánh trước xe con vừa chạm vạch liền làn khẩn cấp",
+    "group": "cut_in",
+    "h_start": 6.6,
+    "h_end": 11.1,
+    "duration": 18.0
+  },
+  {
+    "id": 49,
+    "ch": 3,
+    "title": "Xe tải phía trước phanh gấp rơi hàng hóa xuống đường",
+    "cue": "Đèn phanh xe tải đỏ và thùng hàng bắt đầu rơi",
+    "group": "brake_light",
+    "h_start": 7.3,
+    "h_end": 11.8,
+    "duration": 18.0
+  },
+  {
+    "id": 50,
+    "ch": 3,
+    "title": "Xe con phía trước phanh gấp vì gặp chướng ngại vật",
+    "cue": "Đèn phanh xe con trước vừa chớm đỏ",
+    "group": "brake_light",
+    "h_start": 8.0,
+    "h_end": 12.5,
+    "duration": 18.0
+  },
+  {
+    "id": 51,
+    "ch": 3,
+    "title": "Xe tải đi ngược chiều nguy hiểm trên cao tốc",
+    "cue": "Đầu xe tải ngược chiều vừa xuất hiện từ xa ở làn bạn",
+    "group": "lane_cross",
+    "h_start": 8.7,
+    "h_end": 13.2,
+    "duration": 18.0
+  },
+  {
+    "id": 52,
+    "ch": 3,
+    "title": "Xe con đi lùi ở nút giao ra khỏi cao tốc",
+    "cue": "Đèn lùi trắng của xe con phía trước vừa bật sáng",
+    "group": "cut_in",
+    "h_start": 9.4,
+    "h_end": 13.9,
+    "duration": 18.0
+  },
+  {
+    "id": 53,
+    "ch": 3,
+    "title": "Xe tải chuyển làn bất ngờ che khuất tầm nhìn",
+    "cue": "Bánh xe tải vừa đè lên vạch phân làn cao tốc",
+    "group": "cut_in",
+    "h_start": 10.1,
+    "h_end": 14.6,
+    "duration": 18.0
+  },
+  {
+    "id": 54,
+    "ch": 3,
+    "title": "Xe con từ đường nhánh nhập làn cao tốc với tốc độ chậm",
+    "cue": "Đầu xe con vừa đè qua vạch phân làn nhập đường",
+    "group": "intersection",
+    "h_start": 10.8,
+    "h_end": 15.3,
+    "duration": 18.0
+  },
+  {
+    "id": 55,
+    "ch": 3,
+    "title": "Xe con phía trước phanh gấp nhường xe nhập làn",
+    "cue": "Đèn phanh đỏ xe con trước vừa sáng",
+    "group": "brake_light",
+    "h_start": 6.0,
+    "h_end": 10.5,
+    "duration": 18.0
+  },
+  {
+    "id": 56,
+    "ch": 3,
+    "title": "Xe con gặp sự cố đỗ ở làn dừng khẩn cấp không đặt biển cảnh báo",
+    "cue": "Đầu xe mình vừa ngang qua đuôi xe gặp sự cố",
+    "group": "cut_in",
+    "h_start": 6.7,
+    "h_end": 11.2,
+    "duration": 18.0
+  },
+  {
+    "id": 57,
+    "ch": 3,
+    "title": "Xe tải phía trước phanh gấp do gặp công trường sửa đường",
+    "cue": "Đèn phanh đỏ xe tải vừa bật sáng",
+    "group": "brake_light",
+    "h_start": 7.4,
+    "h_end": 11.9,
+    "duration": 18.0
+  },
+  {
+    "id": 58,
+    "ch": 3,
+    "title": "Xe con chuyển làn liên tục vượt ẩu trên cao tốc",
+    "cue": "Bánh xe con vừa chạm vạch đứt lách sang làn bạn",
+    "group": "cut_in",
+    "h_start": 8.1,
+    "h_end": 12.6,
+    "duration": 18.0
+  },
+  {
+    "id": 59,
+    "ch": 3,
+    "title": "Xe con phía trước phanh gấp tránh mảnh lốp xe rơi trên đường",
+    "cue": "Đèn phanh đỏ xe con trước vừa chớm sáng",
+    "group": "brake_light",
+    "h_start": 8.8,
+    "h_end": 13.3,
+    "duration": 18.0
+  },
+  {
+    "id": 60,
+    "ch": 3,
+    "title": "Xe tải từ làn khẩn cấp xi-nhan nhập làn cao tốc",
+    "cue": "Bánh trước xe tải vừa chạm vạch phân cách làn",
+    "group": "cut_in",
+    "h_start": 9.5,
+    "h_end": 14.0,
+    "duration": 18.0
+  },
+  {
+    "id": 61,
+    "ch": 3,
+    "title": "Xe con phía trước phanh gấp do xe khách dừng đón khách",
+    "cue": "Đèn phanh xe con trước vừa chớm đỏ",
+    "group": "brake_light",
+    "h_start": 10.2,
+    "h_end": 14.7,
+    "duration": 18.0
+  },
+  {
+    "id": 62,
+    "ch": 3,
+    "title": "Xe con đi ngược chiều ở làn ngoài cùng cao tốc",
+    "cue": "Thấy rõ đầu xe con ngược chiều xuất hiện",
+    "group": "lane_cross",
+    "h_start": 10.9,
+    "h_end": 15.4,
+    "duration": 18.0
+  },
+  {
+    "id": 63,
+    "ch": 3,
+    "title": "Gặp súc vật đi lạc trên đường cao tốc",
+    "cue": "Con bò vừa bước chân qua dải phân cách vào làn xe",
+    "group": "animal",
+    "h_start": 6.1,
+    "h_end": 10.6,
+    "duration": 18.0
+  },
+  {
+    "id": 64,
+    "ch": 4,
+    "title": "Xe khách lấn làn ở khúc cua đường đèo hiểm trở",
+    "cue": "Đầu xe khách vừa nhô ra khỏi khúc cua đè vạch vàng",
+    "group": "lane_cross",
+    "h_start": 6.8,
+    "h_end": 11.3,
+    "duration": 18.0
+  },
+  {
+    "id": 65,
+    "ch": 4,
+    "title": "Khúc cua ban đêm gặp xe tải bật đèn pha chiếu xa lóa mắt",
+    "cue": "Ánh đèn pha xe tải vừa lóe sáng ở mép cua",
+    "group": "lane_cross",
+    "h_start": 7.5,
+    "h_end": 12.0,
+    "duration": 18.0
+  },
+  {
+    "id": 66,
+    "ch": 4,
+    "title": "Đoạn đường núi sạt lở đá rơi bất ngờ xuống đường",
+    "cue": "Đá bắt đầu lăn từ sườn núi rơi xuống mặt đường",
+    "group": "cut_in",
+    "h_start": 8.2,
+    "h_end": 12.7,
+    "duration": 18.0
+  },
+  {
+    "id": 67,
+    "ch": 4,
+    "title": "Xe con phía trước phanh gấp vì gặp đàn gia súc qua đèo",
+    "cue": "Đèn phanh đỏ xe con trước vừa chớm sáng",
+    "group": "brake_light",
+    "h_start": 8.9,
+    "h_end": 13.4,
+    "duration": 18.0
+  },
+  {
+    "id": 68,
+    "ch": 4,
+    "title": "Đường đèo dốc sương mù dày đặc gặp xe tải đi chậm",
+    "cue": "Bóng xe tải mờ ảo xuất hiện rõ dần trong sương mù",
+    "group": "cut_in",
+    "h_start": 9.6,
+    "h_end": 14.1,
+    "duration": 18.0
+  },
+  {
+    "id": 69,
+    "ch": 4,
+    "title": "Xe tải mất phanh trôi dốc ở khúc đèo nguy hiểm",
+    "cue": "Đầu xe tải trôi nhanh qua vạch tim đường",
+    "group": "lane_cross",
+    "h_start": 10.3,
+    "h_end": 14.8,
+    "duration": 18.0
+  },
+  {
+    "id": 70,
+    "ch": 4,
+    "title": "Xe khách vượt xe tải ở khúc cua đè vạch liền",
+    "cue": "Đầu xe khách vượt lên vừa lộ ra sau thân xe tải",
+    "group": "lane_cross",
+    "h_start": 11.0,
+    "h_end": 15.5,
+    "duration": 18.0
+  },
+  {
+    "id": 71,
+    "ch": 4,
+    "title": "Xe con phía trước phanh gấp tránh tảng đá sạt lở",
+    "cue": "Đèn phanh xe con trước vừa chớm đỏ",
+    "group": "brake_light",
+    "h_start": 6.2,
+    "h_end": 10.7,
+    "duration": 18.0
+  },
+  {
+    "id": 72,
+    "ch": 4,
+    "title": "Đoạn đường đèo trơn trượt xe con đi trước bị mất lái quay ngang",
+    "cue": "Đuôi xe con phía trước bắt đầu văng ngang sang làn bạn",
+    "group": "cut_in",
+    "h_start": 6.9,
+    "h_end": 11.4,
+    "duration": 18.0
+  },
+  {
+    "id": 73,
+    "ch": 4,
+    "title": "Xe tải ngược chiều chở hàng quá khổ lấn hết mặt đường đèo",
+    "cue": "Thùng xe tải ngược chiều vừa chạm vạch tim đường",
+    "group": "lane_cross",
+    "h_start": 7.6,
+    "h_end": 12.1,
+    "duration": 18.0
+  },
+  {
+    "id": 74,
+    "ch": 5,
+    "title": "Xe tải chở hàng từ cây xăng lao ra quốc lộ",
+    "cue": "Đầu xe tải vừa chạm mép vỉa hè cây xăng",
+    "group": "intersection",
+    "h_start": 8.3,
+    "h_end": 12.8,
+    "duration": 18.0
+  },
+  {
+    "id": 75,
+    "ch": 5,
+    "title": "Trẻ em đi xe đạp băng qua đường quốc lộ",
+    "cue": "Bánh trước xe đạp vừa chạm dải vạch qua đường",
+    "group": "pedestrian",
+    "h_start": 9.0,
+    "h_end": 13.5,
+    "duration": 18.0
+  },
+  {
+    "id": 76,
+    "ch": 5,
+    "title": "Xe máy từ ngõ phụ không giảm tốc lao thẳng ra",
+    "cue": "Đầu xe máy vừa xuất hiện sau cổng làng",
+    "group": "intersection",
+    "h_start": 9.7,
+    "h_end": 14.2,
+    "duration": 18.0
+  },
+  {
+    "id": 77,
+    "ch": 5,
+    "title": "Xe con phía trước phanh gấp nhường đường cho xe quay đầu",
+    "cue": "Đèn phanh đỏ xe con trước vừa chớm sáng",
+    "group": "brake_light",
+    "h_start": 10.4,
+    "h_end": 14.9,
+    "duration": 18.0
+  },
+  {
+    "id": 78,
+    "ch": 5,
+    "title": "Xe máy lách qua dải phân cách sang đường ẩu",
+    "cue": "Bánh xe máy vừa vượt qua khe hở dải phân cách",
+    "group": "cut_in",
+    "h_start": 11.1,
+    "h_end": 15.6,
+    "duration": 18.0
+  },
+  {
+    "id": 79,
+    "ch": 5,
+    "title": "Xe tải phía trước phanh gấp gặp đoàn mô tô đi phượt",
+    "cue": "Đèn phanh xe tải vừa sáng đỏ",
+    "group": "brake_light",
+    "h_start": 6.3,
+    "h_end": 10.8,
+    "duration": 18.0
+  },
+  {
+    "id": 80,
+    "ch": 5,
+    "title": "Xe máy chở cồng kềnh rơi đồ xuống mặt đường quốc lộ",
+    "cue": "Kiện hàng trên xe máy bắt đầu rơi chạm đất",
+    "group": "cut_in",
+    "h_start": 7.0,
+    "h_end": 11.5,
+    "duration": 18.0
+  },
+  {
+    "id": 81,
+    "ch": 5,
+    "title": "Xe bán tải vượt xe tải ở đoạn đường cấm vượt",
+    "cue": "Đầu xe bán tải vừa lách lên ngang thân xe tải",
+    "group": "lane_cross",
+    "h_start": 7.7,
+    "h_end": 12.2,
+    "duration": 18.0
+  },
+  {
+    "id": 82,
+    "ch": 5,
+    "title": "Xe con phía trước phanh gấp do gặp chướng ngại vật",
+    "cue": "Đèn phanh đỏ xe con trước vừa sáng",
+    "group": "brake_light",
+    "h_start": 8.4,
+    "h_end": 12.9,
+    "duration": 18.0
+  },
+  {
+    "id": 83,
+    "ch": 5,
+    "title": "Gặp đàn cừu/dê băng qua đường quốc lộ",
+    "cue": "Con cừu đầu tiên vừa đặt chân xuống mặt đường",
+    "group": "animal",
+    "h_start": 9.1,
+    "h_end": 13.6,
+    "duration": 18.0
+  },
+  {
+    "id": 84,
+    "ch": 5,
+    "title": "Xe con phía trước phanh gấp tránh xe máy ngã",
+    "cue": "Đèn phanh đỏ xe con trước vừa chớm đỏ",
+    "group": "brake_light",
+    "h_start": 9.8,
+    "h_end": 14.3,
+    "duration": 18.0
+  },
+  {
+    "id": 85,
+    "ch": 5,
+    "title": "Xe tải chở gỗ rơi cây gỗ xuống mặt đường",
+    "cue": "Khúc gỗ trên xe tải bắt đầu tuột dây rơi",
+    "group": "cut_in",
+    "h_start": 10.5,
+    "h_end": 15.0,
+    "duration": 18.0
+  },
+  {
+    "id": 86,
+    "ch": 5,
+    "title": "Đoạn đường quốc lộ giao cắt đường sắt không có rào chắn",
+    "cue": "Thấy đầu tàu hỏa vừa xuất hiện ở bên trái giao lộ",
+    "group": "railway",
+    "h_start": 11.2,
+    "h_end": 15.7,
+    "duration": 18.0
+  },
+  {
+    "id": 87,
+    "ch": 5,
+    "title": "Đoàn xe máy chạy lấn làn dàn hàng ngang",
+    "cue": "Nhóm xe máy vừa vượt qua dải phân cách tim đường",
+    "group": "lane_cross",
+    "h_start": 6.4,
+    "h_end": 10.9,
+    "duration": 18.0
+  },
+  {
+    "id": 88,
+    "ch": 5,
+    "title": "Xe buýt dừng trả khách bất ngờ xi-nhan ra làn",
+    "cue": "Đầu xe buýt vừa chớm đánh lái nhô ra khỏi điểm dừng",
+    "group": "cut_in",
+    "h_start": 7.1,
+    "h_end": 11.6,
+    "duration": 18.0
+  },
+  {
+    "id": 89,
+    "ch": 5,
+    "title": "Xe đạp điện sang đường thiếu quan sát",
+    "cue": "Bánh xe đạp điện vừa lăn xuống lòng đường quốc lộ",
+    "group": "pedestrian",
+    "h_start": 7.8,
+    "h_end": 12.3,
+    "duration": 18.0
+  },
+  {
+    "id": 90,
+    "ch": 5,
+    "title": "Xe con phía trước phanh gấp vì gặp đèn đỏ ngã tư",
+    "cue": "Đèn phanh đỏ xe con trước vừa chớm sáng",
+    "group": "brake_light",
+    "h_start": 8.5,
+    "h_end": 13.0,
+    "duration": 18.0
+  },
+  {
+    "id": 91,
+    "ch": 6,
+    "title": "Xe con lùi từ bãi đỗ xe ra đường chính che khuất tầm nhìn",
+    "cue": "Đuôi xe con vừa nhô qua mép xe bên cạnh",
+    "group": "intersection",
+    "h_start": 9.2,
+    "h_end": 13.7,
+    "duration": 18.0
+  },
+  {
+    "id": 92,
+    "ch": 6,
+    "title": "Xe khách lấn làn vượt xe tải ở đoạn dốc cua",
+    "cue": "Đầu xe khách vừa lấn qua vạch tim đường",
+    "group": "lane_cross",
+    "h_start": 9.9,
+    "h_end": 14.4,
+    "duration": 18.0
+  },
+  {
+    "id": 93,
+    "ch": 6,
+    "title": "Xe con phía trước phanh gấp trên cao tốc tránh xe chết máy",
+    "cue": "Đèn phanh xe con trước vừa chớm đỏ",
+    "group": "brake_light",
+    "h_start": 10.6,
+    "h_end": 15.1,
+    "duration": 18.0
+  },
+  {
+    "id": 94,
+    "ch": 6,
+    "title": "Xe tải chở hàng quá tải lật ở vòng xuyến ngã năm",
+    "cue": "Thùng xe tải bắt đầu nghiêng chực lật",
+    "group": "cut_in",
+    "h_start": 11.3,
+    "h_end": 15.8,
+    "duration": 18.0
+  },
+  {
+    "id": 95,
+    "ch": 6,
+    "title": "Người đi bộ bất ngờ trèo qua dải phân cách cao tốc",
+    "cue": "Người đi bộ vừa chạm chân xuống làn đường cao tốc",
+    "group": "pedestrian",
+    "h_start": 6.5,
+    "h_end": 11.0,
+    "duration": 18.0
+  },
+  {
+    "id": 96,
+    "ch": 6,
+    "title": "Xe con nổ lốp mất lái va vào dải phân cách giữa",
+    "cue": "Xe con chao đảo bốc khói lốp",
+    "group": "cut_in",
+    "h_start": 7.2,
+    "h_end": 11.7,
+    "duration": 18.0
+  },
+  {
+    "id": 97,
+    "ch": 6,
+    "title": "Xe khách vượt ẩu trong sương mù đối đầu xe bạn",
+    "cue": "Bóng xe khách lấn làn hiện rõ trước mặt",
+    "group": "lane_cross",
+    "h_start": 7.9,
+    "h_end": 12.4,
+    "duration": 18.0
+  },
+  {
+    "id": 98,
+    "ch": 6,
+    "title": "Xe con phía trước phanh gấp tránh người say rượu đi xe máy",
+    "cue": "Đèn phanh xe con trước vừa chớm đỏ",
+    "group": "brake_light",
+    "h_start": 8.6,
+    "h_end": 13.1,
+    "duration": 18.0
+  },
+  {
+    "id": 99,
+    "ch": 6,
+    "title": "Xe bồn xăng dầu va chạm bốc cháy ở ngã tư",
+    "cue": "Đầu xe bồn vừa va chạm với chướng ngại vật",
+    "group": "intersection",
+    "h_start": 9.3,
+    "h_end": 13.8,
+    "duration": 18.0
+  },
+  {
+    "id": 100,
+    "ch": 6,
+    "title": "Tàu hỏa chạy qua giao lộ có đèn đỏ nhấp nháy",
+    "cue": "Đèn tín hiệu giao cắt đường sắt vừa bắt đầu chớp đỏ",
+    "group": "railway",
+    "h_start": 10.0,
+    "h_end": 14.5,
+    "duration": 18.0
+  },
+  {
+    "id": 101,
+    "ch": 6,
+    "title": "Xe con vượt ẩu qua đường sắt suýt bị tàu đâm",
+    "cue": "Xe con vừa cố vượt qua vạch dừng đường sắt",
+    "group": "railway",
+    "h_start": 10.7,
+    "h_end": 15.2,
+    "duration": 18.0
+  },
+  {
+    "id": 102,
+    "ch": 6,
+    "title": "Xe máy đi ngược chiều trong hầm đường bộ",
+    "cue": "Ánh đèn xe máy ngược chiều vừa xuất hiện trong hầm",
+    "group": "lane_cross",
+    "h_start": 11.4,
+    "h_end": 15.9,
+    "duration": 18.0
+  },
+  {
+    "id": 103,
+    "ch": 6,
+    "title": "Xe con phía trước phanh gấp tránh xe chết máy trong hầm",
+    "cue": "Đèn phanh đỏ xe con trước vừa bật sáng",
+    "group": "brake_light",
+    "h_start": 6.6,
+    "h_end": 11.1,
+    "duration": 18.0
+  },
+  {
+    "id": 104,
+    "ch": 6,
+    "title": "Xe con chuyển làn bất ngờ trước lối vào trạm thu phí",
+    "cue": "Bánh trước xe con vừa đè vạch đứt chuyển làn",
+    "group": "cut_in",
+    "h_start": 7.3,
+    "h_end": 11.8,
+    "duration": 18.0
+  },
+  {
+    "id": 105,
+    "ch": 6,
+    "title": "Xe tải mất phanh đâm vào dải phân cách trạm thu phí",
+    "cue": "Đầu xe tải vừa chồm lên dải phân cách bê tông",
+    "group": "cut_in",
+    "h_start": 8.0,
+    "h_end": 12.5,
+    "duration": 18.0
+  },
+  {
+    "id": 106,
+    "ch": 6,
+    "title": "Xe khách chở công nhân lật ở khúc cua đường trơn",
+    "cue": "Thân xe khách nghiêng hẳn sang làn đường",
+    "group": "lane_cross",
+    "h_start": 8.7,
+    "h_end": 13.2,
+    "duration": 18.0
+  },
+  {
+    "id": 107,
+    "ch": 6,
+    "title": "Xe con phía trước phanh gấp tránh xe đi lùi",
+    "cue": "Đèn phanh xe con trước vừa chớm đỏ",
+    "group": "brake_light",
+    "h_start": 9.4,
+    "h_end": 13.9,
+    "duration": 18.0
+  },
+  {
+    "id": 108,
+    "ch": 6,
+    "title": "Xe máy chở bình gas rơi bình gas lăn ra đường",
+    "cue": "Bình gas trên xe máy rơi xuống mặt đường",
+    "group": "cut_in",
+    "h_start": 10.1,
+    "h_end": 14.6,
+    "duration": 18.0
+  },
+  {
+    "id": 109,
+    "ch": 6,
+    "title": "Xe trộn bê tông rẽ ẩu cuốn xe máy vào gầm",
+    "cue": "Đầu xe trộn bê tông vừa đè vạch rẽ cắt mặt",
+    "group": "intersection",
+    "h_start": 10.8,
+    "h_end": 15.3,
+    "duration": 18.0
+  },
+  {
+    "id": 110,
+    "ch": 6,
+    "title": "Xe container cán qua vạch dừng đèn đỏ ngã tư",
+    "cue": "Bánh trước container vừa đè vạch dừng khi đèn vàng",
+    "group": "intersection",
+    "h_start": 6.0,
+    "h_end": 10.5,
+    "duration": 18.0
+  },
+  {
+    "id": 111,
+    "ch": 6,
+    "title": "Xe khách lấn làn vượt xe tải đối đầu xe bạn",
+    "cue": "Đầu xe khách vừa lộ diện hoàn toàn lấn sang làn bạn",
+    "group": "lane_cross",
+    "h_start": 6.7,
+    "h_end": 11.2,
+    "duration": 18.0
+  },
+  {
+    "id": 112,
+    "ch": 6,
+    "title": "Xe con phía trước phanh gấp tránh chó chạy qua đường",
+    "cue": "Đèn phanh đỏ xe con trước vừa chớm sáng",
+    "group": "brake_light",
+    "h_start": 7.4,
+    "h_end": 11.9,
+    "duration": 18.0
+  },
+  {
+    "id": 113,
+    "ch": 6,
+    "title": "Xe buýt chở khách vượt ẩu chèn xe con vào rào chắn",
+    "cue": "Thân xe buýt bắt đầu ép sát làn xe bạn",
+    "group": "lane_cross",
+    "h_start": 8.1,
+    "h_end": 12.6,
+    "duration": 18.0
+  },
+  {
+    "id": 114,
+    "ch": 6,
+    "title": "Xe máy rẽ trái không quan sát trước đầu xe ben",
+    "cue": "Bánh trước xe máy vừa rẽ cắt ngang đầu xe",
+    "group": "cut_in",
+    "h_start": 8.8,
+    "h_end": 13.3,
+    "duration": 18.0
+  },
+  {
+    "id": 115,
+    "ch": 6,
+    "title": "Xe tải chở đất đứt phanh lao qua vòng xuyến",
+    "cue": "Đầu xe tải vừa chồm vào khu vực đảo xuyến",
+    "group": "intersection",
+    "h_start": 9.5,
+    "h_end": 14.0,
+    "duration": 18.0
+  },
+  {
+    "id": 116,
+    "ch": 6,
+    "title": "Xe con phía trước phanh gấp tránh đá rơi công trường",
+    "cue": "Đèn phanh xe con trước vừa chớm đỏ",
+    "group": "brake_light",
+    "h_start": 10.2,
+    "h_end": 14.7,
+    "duration": 18.0
+  },
+  {
+    "id": 117,
+    "ch": 6,
+    "title": "Xe container chuyển làn không nhường đường cho xe con",
+    "cue": "Bánh trước container vừa đè lên vạch phân làn",
+    "group": "cut_in",
+    "h_start": 10.9,
+    "h_end": 15.4,
+    "duration": 18.0
+  },
+  {
+    "id": 118,
+    "ch": 6,
+    "title": "Xe con đi lùi từ làn dừng khẩn cấp ra làn chạy",
+    "cue": "Đèn lùi xe con sáng và đuôi xe chạm làn chính",
+    "group": "cut_in",
+    "h_start": 6.1,
+    "h_end": 10.6,
+    "duration": 18.0
+  },
+  {
+    "id": 119,
+    "ch": 6,
+    "title": "Xe khách chạy quá tốc độ đâm vào rào chắn công trình",
+    "cue": "Đầu xe khách chạm vào cọc tiêu công trình",
+    "group": "cut_in",
+    "h_start": 6.8,
+    "h_end": 11.3,
+    "duration": 18.0
+  },
+  {
+    "id": 120,
+    "ch": 6,
+    "title": "Xe tải phía trước phanh gấp xe sau đâm dồn toa liên hoàn",
+    "cue": "Đèn phanh đỏ xe tải trước vừa chớm sáng",
+    "group": "brake_light",
+    "h_start": 7.5,
+    "h_end": 12.0,
+    "duration": 18.0
+  }
+]

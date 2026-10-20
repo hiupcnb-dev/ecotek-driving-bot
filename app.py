@@ -545,13 +545,15 @@ def play_podcast_playlist(chat_id, part_key, start_idx=0, count=5):
 
     threading.Thread(target=_run_playlist, daemon=True).start()
 
-# BÀN PHÍM ĐIỀU KHIỂN & BÁO CÁO MỚI NHẤT (TÍCH HỢP TƯƠNG TÁC GIỌNG NÓI & KHÓA C1)
+# BÀN PHÍM ĐIỀU KHIỂN & BÁO CÁO MỚI NHẤT (TÍCH HỢP MINI APP 120 MÔ PHỎNG & KHÓA C1)
+SIMULATION_WEBAPP_URL = f"{CONFIG['RENDER_EXTERNAL_URL'].rstrip('/')}/simulation"
+
 MAIN_KEYBOARD = {
     "keyboard": [
-        [{"text": "🎯 Thi Thử Sát Hạch (40 câu)"}, {"text": "📋 15 Đề Thi Cố Định"}],
-        [{"text": "⚠️ 60 Câu Điểm Liệt"}, {"text": "⚠️ Top 50 Câu Hay Sai"}],
-        [{"text": "🎬 120 Mô Phỏng V2.0.0"}, {"text": "💡 Mẹo Thi Đậu 100%"}],
-        [{"text": "📻 Sách Nói 600 Câu (Rảnh Tay)"}, {"text": "🎙️ Học Bằng Giọng Nói (Bật/Tắt)"}],
+        [{"text": "🎮 Phòng Thi Mô Phỏng (120 Câu)", "web_app": {"url": SIMULATION_WEBAPP_URL}}, {"text": "🎯 Thi Thử Sát Hạch (40 câu)"}],
+        [{"text": "📋 15 Đề Thi Cố Định"}, {"text": "⚠️ 60 Câu Điểm Liệt"}],
+        [{"text": "🎬 120 Mô Phỏng V2.0.0"}, {"text": "⚠️ Top 50 Câu Hay Sai"}],
+        [{"text": "💡 Mẹo Thi Đậu 100%"}, {"text": "📻 Sách Nói 600 Câu (Rảnh Tay)"}],
         [{"text": "🚗 Ôn Luyện Từng Câu"}, {"text": "❌ Sổ Tay Câu Sai"}],
         [{"text": "🔴 Biển Báo (Có Ảnh)"}, {"text": "🧩 Sa Hình (Có Ảnh)"}],
         [{"text": "🚛 Chuyên Đề Xe Tải C1"}, {"text": "👨‍🏫 Thầy AI Antigravity"}],
@@ -857,7 +859,9 @@ def send_simulation_menu(chat_id, message_id=None):
 
 👇 <i>Anh chọn nội dung tra cứu hoặc thi thử bên dưới:</i>"""
     
+    sim_url = f"{CONFIG['RENDER_EXTERNAL_URL'].rstrip('/')}/simulation"
     kb = [
+        [{"text": "🎮 VÀO PHÒNG THI MÔ PHỎNG (MÀN HÌNH THẬT)", "web_app": {"url": sim_url}}],
         [{"text": "🎯 6 Mẹo Vàng Bắt Trọn Điểm 5", "callback_data": "sim_cues_summary"}],
         [{"text": "🏙️ Chương 1: Đô thị (29 câu)", "callback_data": "sim_ch_1"},
          {"text": "🌾 Chương 2: Nông thôn (14 câu)", "callback_data": "sim_ch_2"}],
@@ -891,7 +895,9 @@ def send_simulation_cues_summary(chat_id, message_id=None):
 
 6. 🐄 <b>GIA SÚC (TRÂU, BÒ) BƯỚC LÊN MẶT ĐƯỜNG (8 tình huống):</b>
    👉 Con bò đầu tiên vừa quay đầu bước chân lên mặt đường nhựa -> Bấm <b>SPACE</b>!"""
+    sim_url = f"{CONFIG['RENDER_EXTERNAL_URL'].rstrip('/')}/simulation"
     kb = [
+        [{"text": "🎮 Vào Phòng Thi Thực Hành Ngay", "web_app": {"url": sim_url}}],
         [{"text": "📋 Xem Chi Tiết 6 Chương", "callback_data": "sim_menu"}],
         [{"text": "🎲 Thi Thử 10 Câu Mô Phỏng", "callback_data": "sim_mock_exam"}]
     ]
@@ -1868,6 +1874,28 @@ def handle_telegram_update(update):
             message = update['message']
             chat_id = message.get('chat', {}).get('id')
 
+            # XỬ LÝ DỮ LIỆU TỪ TELEGRAM WEBAPP (MINI APP MÔ PHỎNG)
+            if 'web_app_data' in message:
+                try:
+                    raw_data = message['web_app_data'].get('data', '')
+                    payload = json.loads(raw_data)
+                    if payload.get('type') == 'simulation_exam_result':
+                        total = payload.get('totalScore', 0)
+                        passed = payload.get('isPassed', False)
+                        details = payload.get('details', [])
+                        status_icon = "🎉 <b>ĐẠT YÊU CẦU XUẤT SẮC!</b>" if passed else "⚠️ <b>CHƯA ĐẠT (CẦN TỐI THIỂU 35/50)</b>"
+                        msg = f"""🏆 <b>BÁO CÁO KẾT QUẢ THI THỬ 120 MÔ PHỎNG V2.0.0</b>\n━━━━━━━━━━━━━━━━━━━\n👤 <b>Thí sinh:</b> {CONFIG['STUDENT_NAME']} ({CONFIG['COURSE_NAME']})\n📊 <b>Tổng điểm:</b> <b>{total} / 50 ĐIỂM</b>\n🎯 <b>Kết luận:</b> {status_icon}\n⏱️ <b>Quy chế:</b> Đạt từ 35/50 điểm trở lên\n━━━━━━━━━━━━━━━━━━━\n📝 <i>Chi tiết 10 tình huống vừa thi:</i>\n"""
+                        for idx, d in enumerate(details[:10]):
+                            score = d.get('score', 0)
+                            t = d.get('time')
+                            t_str = f"{t:.1f}s" if t is not None else "Không phanh"
+                            msg += f"• <b>Câu #{idx+1} (TH #{d.get('sitId')}):</b> {score}/5đ (Phản xạ: {t_str})\n"
+                        msg += "\n💡 <i>Anh có thể mở lại phòng thi mô phỏng bất kỳ lúc nào để luyện bắt trọn điểm 5 nhé!</i>"
+                        send_message(chat_id, msg, reply_markup=MAIN_KEYBOARD)
+                        return
+                except Exception as e:
+                    print(f"[Bot] Lỗi đọc web_app_data: {e}")
+
             # XỬ LÝ TIN NHẮN THOẠI (VOICE NOTE / AUDIO TỪ ANH HIẾU)
             voice_obj = message.get('voice') or message.get('audio')
             if voice_obj:
@@ -2479,6 +2507,41 @@ def route_ask_ai():
     else:
         reply = "Dạ em chào anh Hiếu! Em là Antigravity đây ạ. Anh cần hỏi câu nào hay mẹo gì cứ nhắn em nhé!"
     return jsonify({'ok': True, 'reply': reply})
+
+# ================= 120 MÔ PHỎNG TELEGRAM MINI APP ROUTES =================
+@app.route('/simulation')
+@app.route('/mophong')
+def route_simulation():
+    template_path = os.path.join(BASE_DIR, 'templates', 'simulation.html')
+    if os.path.exists(template_path):
+        with open(template_path, 'r', encoding='utf-8') as f:
+            return f.read(), 200, {'Content-Type': 'text/html; charset=utf-8'}
+    return "❌ Chưa tìm thấy giao diện phòng thi mô phỏng!", 404
+
+@app.route('/api/simulation_situations', methods=['GET'])
+def route_simulation_situations():
+    data_path = os.path.join(BASE_DIR, 'simulation_data.json')
+    if os.path.exists(data_path):
+        with open(data_path, 'r', encoding='utf-8') as f:
+            return jsonify(json.load(f))
+    return jsonify([])
+
+@app.route('/api/simulation_result', methods=['POST'])
+def route_simulation_result():
+    payload = request.get_json(force=True, silent=True) or {}
+    total = payload.get('totalScore', 0)
+    passed = payload.get('isPassed', False)
+    details = payload.get('details', [])
+    status_icon = "🎉 <b>ĐẠT YÊU CẦU XUẤT SẮC!</b>" if passed else "⚠️ <b>CHƯA ĐẠT (CẦN TỐI THIỂU 35/50)</b>"
+    msg = f"""🏆 <b>BÁO CÁO KẾT QUẢ THI THỬ 120 MÔ PHỎNG V2.0.0</b>\n━━━━━━━━━━━━━━━━━━━\n👤 <b>Thí sinh:</b> {CONFIG['STUDENT_NAME']} ({CONFIG['COURSE_NAME']})\n📊 <b>Tổng điểm:</b> <b>{total} / 50 ĐIỂM</b>\n🎯 <b>Kết luận:</b> {status_icon}\n⏱️ <b>Quy chế:</b> Đạt từ 35/50 điểm trở lên\n━━━━━━━━━━━━━━━━━━━\n📝 <i>Chi tiết 10 tình huống vừa thi:</i>\n"""
+    for idx, d in enumerate(details[:10]):
+        score = d.get('score', 0)
+        t = d.get('time')
+        t_str = f"{t:.1f}s" if t is not None else "Không phanh"
+        msg += f"• <b>Câu #{idx+1} (TH #{d.get('sitId')}):</b> {score}/5đ (Phản xạ: {t_str})\n"
+    msg += "\n💡 <i>Anh có thể mở lại phòng thi mô phỏng bất kỳ lúc nào để luyện bắt trọn điểm 5 nhé!</i>"
+    send_message(CONFIG['CHAT_ID'], msg, reply_markup=MAIN_KEYBOARD)
+    return jsonify({'ok': True})
 
 # ================= TELEGRAM WEBHOOK 24/7 ENDPOINTS =================
 @app.route('/webhook', methods=['GET', 'POST'])
